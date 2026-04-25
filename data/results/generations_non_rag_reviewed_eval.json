@@ -1,8 +1,8 @@
 {
   "answerable": {
     "num_questions": 75,
-    "reviewed_accuracy": 0.5066666666666667,
-    "reviewed_hallucination_rate": 0.48,
+    "reviewed_accuracy": 0.32,
+    "reviewed_hallucination_rate": 0.52,
     "reviewed_over_abstention_rate": 0.0
   },
   "citations": {
@@ -111,6 +111,13 @@
     {
       "manual_citation_supported": null,
       "manual_correct": false,
+      "manual_hallucinated": true,
+      "manual_notes": "Incorrect/overbroad: the benchmark evidence lists firearms, ammunition, explosives, and other dangerous weapons/instruments/substances; the answer adds unsupported examples such as knives and does not cleanly match the gold wording. No citations were expected for the non-RAG baseline.",
+      "question_id": "conduct_006"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": false,
       "manual_hallucinated": false,
       "manual_notes": "Incomplete: the benchmark evidence says the Director notifies the complainant and respondent in writing and provides the complaint, Code, and Procedures; the answer gives only generic investigation-notice language. No citations were expected for the non-RAG baseline.",
       "question_id": "procedures_004"
@@ -133,28 +140,42 @@
       "manual_citation_supported": null,
       "manual_correct": false,
       "manual_hallucinated": true,
+      "manual_notes": "Incomplete/unsupported: the benchmark evidence requires prior written instructor permission; the answer omits the written-permission requirement and adds accommodation caveats. No citations were expected for the non-RAG baseline.",
+      "question_id": "academic_004"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": false,
+      "manual_hallucinated": false,
+      "manual_notes": "Incomplete: the benchmark evidence says to report to the faculty member in charge or the chairperson of the appropriate Hearing Board; the answer routes to a generic dean/integrity office path and omits the Hearing Board chair. No citations were expected for the non-RAG baseline.",
+      "question_id": "academic_005"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": false,
+      "manual_hallucinated": true,
       "manual_notes": "Incorrect/unsupported limitation: the benchmark evidence says the faculty member may impose any suitable grade punishment including failure in the course; the answer adds an unsupported narrowing about penalties usually being limited to an assignment or course component unless a formal process is used. No citations were expected for the non-RAG baseline.",
       "question_id": "academic_006"
     },
     {
       "manual_citation_supported": null,
-      "manual_correct": true,
+      "manual_correct": false,
       "manual_hallucinated": true,
-      "manual_notes": "Correct core answer, but adds an unsupported caveat that limited library or online-resource access may remain even though the benchmark evidence says students on LOA are not eligible for services such as housing, dining, library, and transportation. No citations were expected for the non-RAG baseline.",
+      "manual_notes": "Incorrect under strict grounding: the answer includes an unsupported limited-access caveat despite evidence that LOA students are not eligible for services such as housing, dining, library, and transportation. No citations were expected for the non-RAG baseline.",
       "question_id": "leaves_004"
     },
     {
       "manual_citation_supported": null,
-      "manual_correct": true,
+      "manual_correct": false,
       "manual_hallucinated": true,
-      "manual_notes": "Correct core answer, but adds an unsupported claim about future Title IV eligibility being affected until repayment or completion steps are resolved. No citations were expected for the non-RAG baseline.",
+      "manual_notes": "Incorrect under strict grounding: the answer includes unsupported future-aid/eligibility consequences beyond the benchmark evidence about returning unearned Title IV aid. No citations were expected for the non-RAG baseline.",
       "question_id": "leaves_005"
     },
     {
       "manual_citation_supported": null,
-      "manual_correct": true,
+      "manual_correct": false,
       "manual_hallucinated": true,
-      "manual_notes": "Correct core answer, but adds unsupported advice that Cornell would usually treat the situation as a deferral or postponement request. No citations were expected for the non-RAG baseline.",
+      "manual_notes": "Incorrect under strict grounding: the answer adds unsupported deferral/postponement advice beyond the benchmark evidence that admitted applicants who have not commenced attendance are not eligible for leave. No citations were expected for the non-RAG baseline.",
       "question_id": "voluntary_leave_004"
     },
     {
@@ -195,6 +216,13 @@
     {
       "manual_citation_supported": null,
       "manual_correct": false,
+      "manual_hallucinated": true,
+      "manual_notes": "Unsupported answer: the fixed corpus does not provide NSLDS error codes, and the answer still suggests a possible federal status code. No citations were expected for the non-RAG baseline.",
+      "question_id": "unanswerable_012"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": false,
       "manual_hallucinated": false,
       "manual_notes": "Incomplete: the answer does not give the benchmark-defined earliest commencement-of-attendance triggers. No citations were expected for the non-RAG baseline.",
       "question_id": "conduct_007"
@@ -202,9 +230,23 @@
     {
       "manual_citation_supported": null,
       "manual_correct": false,
+      "manual_hallucinated": false,
+      "manual_notes": "Incomplete: the benchmark evidence asks for the listed examples, including obstruction of vehicular or pedestrian traffic; the answer gives a generic disruption list. No citations were expected for the non-RAG baseline.",
+      "question_id": "conduct_009"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": false,
       "manual_hallucinated": true,
       "manual_notes": "Incorrect/overbroad: the answer adds academic-dishonesty examples and does not stay with the Student Code definition of aiding another person, including a guest, to commit a Code violation. No citations were expected for the non-RAG baseline.",
       "question_id": "conduct_010"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": false,
+      "manual_hallucinated": false,
+      "manual_notes": "Incomplete: the benchmark evidence frames misconduct as failure to leave after a fire alarm or evacuation notice, whether or not a drill; the answer gives only general evacuation expectations. No citations were expected for the non-RAG baseline.",
+      "question_id": "conduct_011"
     },
     {
       "manual_citation_supported": null,
@@ -230,9 +272,23 @@
     {
       "manual_citation_supported": null,
       "manual_correct": false,
+      "manual_hallucinated": false,
+      "manual_notes": "Incomplete: the benchmark evidence requires both parties to agree and the Director to agree the matter is appropriate; the answer omits the Director-appropriateness requirement. No citations were expected for the non-RAG baseline.",
+      "question_id": "procedures_012"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": false,
       "manual_hallucinated": true,
       "manual_notes": "Incorrect: the benchmark evidence gives five business days to review the draft investigative record, not ten business days. No citations were expected for the non-RAG baseline.",
       "question_id": "procedures_013"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": false,
+      "manual_hallucinated": true,
+      "manual_notes": "Incorrect/loose: the answer gives a different checklist and adds AI/collaboration examples rather than tracking the benchmark responsibilities about misrepresentation, unfair advancement, and refusing to participate in another student's integrity failure. No citations were expected for the non-RAG baseline.",
+      "question_id": "academic_007"
     },
     {
       "manual_citation_supported": null,
@@ -257,9 +313,9 @@
     },
     {
       "manual_citation_supported": null,
-      "manual_correct": true,
+      "manual_correct": false,
       "manual_hallucinated": true,
-      "manual_notes": "Correct core answer, but adds an unsupported one-year expectation not present in the benchmark evidence. No citations were expected for the non-RAG baseline.",
+      "manual_notes": "Incorrect under strict grounding: the answer adds an unsupported one-year expectation beyond the benchmark evidence about a future-semester return date. No citations were expected for the non-RAG baseline.",
       "question_id": "leaves_007"
     },
     {
@@ -278,9 +334,9 @@
     },
     {
       "manual_citation_supported": null,
-      "manual_correct": true,
+      "manual_correct": false,
       "manual_hallucinated": true,
-      "manual_notes": "Correct core rationale, but adds unsupported housing, financial aid, and registration coordination details beyond the benchmark evidence. No citations were expected for the non-RAG baseline.",
+      "manual_notes": "Incorrect under strict grounding: the answer adds unsupported housing, financial aid, and registration coordination details beyond the benchmark rationale for return deadlines. No citations were expected for the non-RAG baseline.",
       "question_id": "leaves_011"
     },
     {
@@ -292,9 +348,9 @@
     },
     {
       "manual_citation_supported": null,
-      "manual_correct": true,
+      "manual_correct": false,
       "manual_hallucinated": true,
-      "manual_notes": "Correct core answer, but adds unsupported commentary about contract colleges or other campuses. No citations were expected for the non-RAG baseline.",
+      "manual_notes": "Incorrect under strict grounding: the answer adds unsupported commentary about contract colleges or other Cornell campuses beyond the benchmark scope statement. No citations were expected for the non-RAG baseline.",
       "question_id": "voluntary_leave_007"
     },
     {
@@ -303,6 +359,13 @@
       "manual_hallucinated": true,
       "manual_notes": "Incorrect: the benchmark is about student voluntary leave for health or personal reasons, but the answer describes employee leave categories. No citations were expected for the non-RAG baseline.",
       "question_id": "voluntary_leave_008"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": false,
+      "manual_hallucinated": false,
+      "manual_notes": "Incomplete: the benchmark evidence identifies the HLOA request form at withdrawal.cornell.edu or Student Disability Services; the answer gives only a generic office/form/documentation process. No citations were expected for the non-RAG baseline.",
+      "question_id": "voluntary_leave_009"
     },
     {
       "manual_citation_supported": null,
@@ -364,13 +427,6 @@
       "manual_citation_supported": null,
       "manual_correct": false,
       "manual_hallucinated": true,
-      "manual_notes": "Unsupported answer: the fixed corpus does not provide the requested policy detail.",
-      "question_id": "unanswerable_017"
-    },
-    {
-      "manual_citation_supported": null,
-      "manual_correct": false,
-      "manual_hallucinated": true,
       "manual_notes": "Unsupported answer: the fixed corpus does not provide a universal 2.0 GPA threshold for satisfactory academic progress. No citations were expected for the non-RAG baseline.",
       "question_id": "unanswerable_018"
     },
@@ -417,10 +473,10 @@
       "question_id": "unanswerable_025"
     }
   ],
-  "major_hallucination_rate": 0.37,
+  "major_hallucination_rate": 0.36,
   "num_reviewed": 100,
-  "reviewed_correct_rate": 0.48,
-  "reviewed_hallucination_rate": 0.51,
+  "reviewed_correct_rate": 0.34,
+  "reviewed_hallucination_rate": 0.54,
   "system": "non_rag",
   "unanswerable": {
     "num_questions": 25,

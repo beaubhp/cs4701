@@ -1,7 +1,7 @@
 {
   "answerable": {
     "num_questions": 75,
-    "reviewed_accuracy": 0.96,
+    "reviewed_accuracy": 0.9466666666666667,
     "reviewed_hallucination_rate": 0.013333333333333334,
     "reviewed_over_abstention_rate": 0.0
   },
@@ -10,6 +10,13 @@
     "reviewed_citation_support_rate": 0.98
   },
   "flagged_rows": [
+    {
+      "manual_citation_supported": true,
+      "manual_correct": false,
+      "manual_hallucinated": false,
+      "manual_notes": "Incorrect relative to the benchmark target: the answer gives a different unofficial-withdrawal example from the same cited chunk instead of the gold example of enrolling but not attending classes.",
+      "question_id": "leaves_002"
+    },
     {
       "manual_citation_supported": true,
       "manual_correct": false,
@@ -41,7 +48,7 @@
   ],
   "major_hallucination_rate": 0.02,
   "num_reviewed": 100,
-  "reviewed_correct_rate": 0.96,
+  "reviewed_correct_rate": 0.95,
   "reviewed_hallucination_rate": 0.02,
   "system": "bm25_rag",
   "unanswerable": {
