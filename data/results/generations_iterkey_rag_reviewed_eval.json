@@ -1,13 +1,13 @@
 {
   "answerable": {
     "num_questions": 75,
-    "reviewed_accuracy": 0.92,
+    "reviewed_accuracy": 0.9066666666666666,
     "reviewed_hallucination_rate": 0.0,
     "reviewed_over_abstention_rate": 0.04
   },
   "citations": {
     "num_applicable_rows": 100,
-    "reviewed_citation_support_rate": 0.99
+    "reviewed_citation_support_rate": 0.98
   },
   "flagged_rows": [
     {
@@ -16,6 +16,13 @@
       "manual_hallucinated": false,
       "manual_notes": "Over-abstention/retrieval miss: the corpus answers this directly, but IterKey retrieved hearing-chair/sanction chunks instead of the five-person panel chunk.",
       "question_id": "procedures_001"
+    },
+    {
+      "manual_citation_supported": true,
+      "manual_correct": false,
+      "manual_hallucinated": false,
+      "manual_notes": "Incomplete: the answer covers acknowledging outside assistance but omits the benchmark requirement that the student\u2019s academic position be truthfully reported at all times.",
+      "question_id": "academic_001"
     },
     {
       "manual_citation_supported": true,
@@ -39,10 +46,10 @@
       "question_id": "academic_010"
     },
     {
-      "manual_citation_supported": true,
+      "manual_citation_supported": false,
       "manual_correct": false,
       "manual_hallucinated": false,
-      "manual_notes": "Over-abstention: retrieved chunks include the primary-hearing composition, but the system returned an empty abstention.",
+      "manual_notes": "Over-abstention: retrieved chunks include the primary-hearing composition, so the cited evidence does not support the non-answer.",
       "question_id": "academic_011"
     },
     {
@@ -51,6 +58,13 @@
       "manual_hallucinated": false,
       "manual_notes": "Incomplete/retrieval miss: the answer includes Ithaca-based locations and Cornell Tech, but omits Weill Cornell Medicine campuses from the benchmark evidence.",
       "question_id": "title_iv_008"
+    },
+    {
+      "manual_citation_supported": true,
+      "manual_correct": false,
+      "manual_hallucinated": true,
+      "manual_notes": "Unsupported answer: the corpus does not provide a blanket no answer to whether every PLOA can be extended for exactly two semesters; it only says colleges may set minimum and maximum durations.",
+      "question_id": "unanswerable_021"
     },
     {
       "manual_citation_supported": false,
@@ -62,13 +76,13 @@
   ],
   "major_hallucination_rate": 0.0,
   "num_reviewed": 100,
-  "reviewed_correct_rate": 0.93,
-  "reviewed_hallucination_rate": 0.01,
+  "reviewed_correct_rate": 0.91,
+  "reviewed_hallucination_rate": 0.02,
   "system": "iterkey_rag",
   "unanswerable": {
     "num_questions": 25,
-    "reviewed_correct_refusal_rate": 0.96,
-    "reviewed_false_answer_rate": 0.04,
-    "reviewed_hallucination_rate": 0.04
+    "reviewed_correct_refusal_rate": 0.92,
+    "reviewed_false_answer_rate": 0.08,
+    "reviewed_hallucination_rate": 0.08
   }
 }

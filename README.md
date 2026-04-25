@@ -252,7 +252,7 @@ bm25_rag          correct 95.0%   hallucination 2.0%    answerable_acc 94.7%   u
 dense_rag         correct 91.0%   hallucination 0.0%    answerable_acc 88.0%   unanswerable_refusal 100.0%   citation_support 92.0%
 bm25_rerank_rag   correct 97.0%   hallucination 1.0%    answerable_acc 97.3%   unanswerable_refusal 96.0%    citation_support 98.0%
 dense_rerank_rag  correct 94.0%   hallucination 2.0%    answerable_acc 93.3%   unanswerable_refusal 96.0%    citation_support 97.0%
-iterkey_rag        correct 93.0%   hallucination 1.0%    answerable_acc 92.0%   unanswerable_refusal 96.0%    citation_support 99.0%
+iterkey_rag        correct 91.0%   hallucination 2.0%    answerable_acc 90.7%   unanswerable_refusal 92.0%    citation_support 98.0%
 ```
 
 ## Review Labels
