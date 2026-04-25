@@ -68,7 +68,7 @@
     },
     "citations": {
       "num_applicable_rows": 100,
-      "reviewed_citation_support_rate": 0.99
+      "reviewed_citation_support_rate": 0.98
     },
     "flagged_rows": [
       {
@@ -84,18 +84,25 @@
         "manual_hallucinated": false,
         "manual_notes": "Over-abstention/retrieval miss: Policy 7.3 gives the general-contact answer, but the retrieved evidence was from voluntary leave documents.",
         "question_id": "title_iv_009"
+      },
+      {
+        "manual_citation_supported": false,
+        "manual_correct": false,
+        "manual_hallucinated": true,
+        "manual_notes": "Unsupported answer: the response conflates investigative interview recording rules with Student Code hearing video-recording rules, which is the near-miss the benchmark is testing.",
+        "question_id": "unanswerable_023"
       }
     ],
     "major_hallucination_rate": 0.0,
     "num_reviewed": 100,
-    "reviewed_correct_rate": 0.98,
-    "reviewed_hallucination_rate": 0.0,
+    "reviewed_correct_rate": 0.97,
+    "reviewed_hallucination_rate": 0.01,
     "system": "bm25_rerank_rag",
     "unanswerable": {
       "num_questions": 25,
-      "reviewed_correct_refusal_rate": 1.0,
-      "reviewed_false_answer_rate": 0.0,
-      "reviewed_hallucination_rate": 0.0
+      "reviewed_correct_refusal_rate": 0.96,
+      "reviewed_false_answer_rate": 0.04,
+      "reviewed_hallucination_rate": 0.04
     }
   },
   "dense_rag": {
