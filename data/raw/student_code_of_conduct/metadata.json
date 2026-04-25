@@ -1,0 +1,16 @@
+{
+  "doc_id": "student_code_of_conduct",
+  "extra": {
+    "approved_date": "2020-12-10",
+    "effective_date": "2021-08-02"
+  },
+  "fetched_at": "2026-04-25T20:29:42+00:00",
+  "metadata_url": "https://policy.cornell.edu/policy-library/student-code-conduct",
+  "reason": "Core behavioral expectations policy for Cornell students and student organizations.",
+  "sha256": "ee76eb2360d7bb55877617edbdd75820434ef3a2d3630b24ec822d9d1376585c",
+  "snapshot_path": "data/raw/student_code_of_conduct/source.pdf",
+  "source_type": "pdf",
+  "source_url": "https://scl.cornell.edu/sites/scl/files/documents/Cornell%20Student%20Code%20of%20Conduct%20Approved%20by%20the%20Board%2012.10.20%20Final.pdf",
+  "title": "Student Code of Conduct",
+  "topic": "student_conduct"
+}

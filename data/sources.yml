@@ -1,0 +1,64 @@
+- doc_id: student_code_of_conduct
+  title: Student Code of Conduct
+  source_type: pdf
+  source_url: https://scl.cornell.edu/sites/scl/files/documents/Cornell%20Student%20Code%20of%20Conduct%20Approved%20by%20the%20Board%2012.10.20%20Final.pdf
+  metadata_url: https://policy.cornell.edu/policy-library/student-code-conduct
+  effective_date: 2021-08-02
+  approved_date: 2020-12-10
+  include: true
+  topic: student_conduct
+  reason: Core behavioral expectations policy for Cornell students and student organizations.
+
+- doc_id: student_code_of_conduct_procedures
+  title: Student Code of Conduct Procedures
+  source_type: pdf
+  source_url: https://scl.cornell.edu/sites/scl/files/documents/Student%20Code%20of%20Conduct%20Procedures%20Approved%20by%20the%20Board%2012.10.20%20Final.pdf
+  metadata_url: https://catalog.cornell.edu/policies-disclosures/code-conduct/
+  effective_date: 2021-08-02
+  approved_date: 2020-12-10
+  include: true
+  topic: student_conduct
+  reason: Official procedures for resolving alleged violations of the Student Code of Conduct.
+
+- doc_id: code_of_academic_integrity
+  title: Code of Academic Integrity
+  source_type: html
+  source_url: https://www.deanoffaculty.cornell.edu/faculty-and-academic-affairs/academic-integrity/code-of-academic-integrity/
+  metadata_url: https://www.deanoffaculty.cornell.edu/faculty-and-academic-affairs/academic-integrity/code-of-academic-integrity/
+  include: true
+  topic: academic_integrity
+  reason: Official Cornell academic integrity code covering student responsibilities, violations, procedures, hearings, appeals, and penalties.
+
+- doc_id: leaves_and_withdrawals
+  title: Leaves and Withdrawals
+  source_type: html
+  source_url: https://catalog.cornell.edu/enrollment-credit-requirements/leaves-withdrawals/
+  metadata_url: https://catalog.cornell.edu/enrollment-credit-requirements/leaves-withdrawals/
+  catalog_edition: 2025-2026
+  include: true
+  topic: leaves_withdrawals
+  reason: Official Courses of Study page covering leaves, withdrawals, unofficial withdrawals, financial aid impacts, and return-from-leave deadlines.
+
+- doc_id: voluntary_leave_absence_students
+  title: Voluntary Leave of Absence for Students
+  source_type: pdf
+  source_url: https://policy.cornell.edu/sites/default/files/policy/vol7_1.pdf
+  metadata_url: https://policy.cornell.edu/policy-library/voluntary-leave-absence-students
+  policy_number: "7.1"
+  date_issued: 1989-05-01
+  date_last_updated: 2020-09-14
+  include: true
+  topic: leaves_withdrawals
+  reason: Official University Policy 7.1 governing voluntary student leaves, including health and personal leaves.
+
+- doc_id: title_iv_enrollment_status_reporting
+  title: Processing and Reporting Changes in Student Enrollment Status Under Title IV
+  source_type: pdf
+  source_url: https://policy.cornell.edu/sites/default/files/policy/vol7_3.pdf
+  metadata_url: https://policy.cornell.edu/policy-library/processing-and-reporting-changes-student-enrollment-status-under-title-iv
+  policy_number: "7.3"
+  date_issued: 2018-10-17
+  date_last_updated: 2019-03-18
+  include: true
+  topic: leaves_withdrawals
+  reason: Official University Policy 7.3 explaining how Cornell processes enrollment-status changes, leaves, withdrawals, and Title IV reporting/financial-aid treatment.

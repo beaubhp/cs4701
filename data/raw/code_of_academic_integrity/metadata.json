@@ -1,0 +1,13 @@
+{
+  "doc_id": "code_of_academic_integrity",
+  "extra": {},
+  "fetched_at": "2026-04-25T20:29:42+00:00",
+  "metadata_url": "https://www.deanoffaculty.cornell.edu/faculty-and-academic-affairs/academic-integrity/code-of-academic-integrity/",
+  "reason": "Official Cornell academic integrity code covering student responsibilities, violations, procedures, hearings, appeals, and penalties.",
+  "sha256": "e2bcc21492d9081630d9cde794fa4a1e527e636a446085109d79d14f6ac1f272",
+  "snapshot_path": "data/raw/code_of_academic_integrity/source.html",
+  "source_type": "html",
+  "source_url": "https://www.deanoffaculty.cornell.edu/faculty-and-academic-affairs/academic-integrity/code-of-academic-integrity/",
+  "title": "Code of Academic Integrity",
+  "topic": "academic_integrity"
+}

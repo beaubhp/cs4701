@@ -1,0 +1,16 @@
+{
+  "doc_id": "student_code_of_conduct_procedures",
+  "extra": {
+    "approved_date": "2020-12-10",
+    "effective_date": "2021-08-02"
+  },
+  "fetched_at": "2026-04-25T20:29:42+00:00",
+  "metadata_url": "https://catalog.cornell.edu/policies-disclosures/code-conduct/",
+  "reason": "Official procedures for resolving alleged violations of the Student Code of Conduct.",
+  "sha256": "435cf317cd5fc32767f4668ce57452c061a8ced195007efac20ca7ca4bfcb064",
+  "snapshot_path": "data/raw/student_code_of_conduct_procedures/source.pdf",
+  "source_type": "pdf",
+  "source_url": "https://scl.cornell.edu/sites/scl/files/documents/Student%20Code%20of%20Conduct%20Procedures%20Approved%20by%20the%20Board%2012.10.20%20Final.pdf",
+  "title": "Student Code of Conduct Procedures",
+  "topic": "student_conduct"
+}

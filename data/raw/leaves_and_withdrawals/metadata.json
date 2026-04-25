@@ -1,0 +1,15 @@
+{
+  "doc_id": "leaves_and_withdrawals",
+  "extra": {
+    "catalog_edition": "2025-2026"
+  },
+  "fetched_at": "2026-04-25T20:29:43+00:00",
+  "metadata_url": "https://catalog.cornell.edu/enrollment-credit-requirements/leaves-withdrawals/",
+  "reason": "Official Courses of Study page covering leaves, withdrawals, unofficial withdrawals, financial aid impacts, and return-from-leave deadlines.",
+  "sha256": "d5675836a57244d80ad8c62fa6b1d3ec6b735782f17ca82339ad03632188af1b",
+  "snapshot_path": "data/raw/leaves_and_withdrawals/source.html",
+  "source_type": "html",
+  "source_url": "https://catalog.cornell.edu/enrollment-credit-requirements/leaves-withdrawals/",
+  "title": "Leaves and Withdrawals",
+  "topic": "leaves_withdrawals"
+}

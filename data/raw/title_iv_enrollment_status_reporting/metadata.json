@@ -1,0 +1,17 @@
+{
+  "doc_id": "title_iv_enrollment_status_reporting",
+  "extra": {
+    "date_issued": "2018-10-17",
+    "date_last_updated": "2019-03-18",
+    "policy_number": "7.3"
+  },
+  "fetched_at": "2026-04-25T20:29:43+00:00",
+  "metadata_url": "https://policy.cornell.edu/policy-library/processing-and-reporting-changes-student-enrollment-status-under-title-iv",
+  "reason": "Official University Policy 7.3 explaining how Cornell processes enrollment-status changes, leaves, withdrawals, and Title IV reporting/financial-aid treatment.",
+  "sha256": "be68fd63040dad5fae9c00daeeb7ec28dfebf89b9a8f192eec779b1cecf553c3",
+  "snapshot_path": "data/raw/title_iv_enrollment_status_reporting/source.pdf",
+  "source_type": "pdf",
+  "source_url": "https://policy.cornell.edu/sites/default/files/policy/vol7_3.pdf",
+  "title": "Processing and Reporting Changes in Student Enrollment Status Under Title IV",
+  "topic": "leaves_withdrawals"
+}

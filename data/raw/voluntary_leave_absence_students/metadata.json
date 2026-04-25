@@ -1,0 +1,17 @@
+{
+  "doc_id": "voluntary_leave_absence_students",
+  "extra": {
+    "date_issued": "1989-05-01",
+    "date_last_updated": "2020-09-14",
+    "policy_number": "7.1"
+  },
+  "fetched_at": "2026-04-25T20:29:43+00:00",
+  "metadata_url": "https://policy.cornell.edu/policy-library/voluntary-leave-absence-students",
+  "reason": "Official University Policy 7.1 governing voluntary student leaves, including health and personal leaves.",
+  "sha256": "3b0286ae695994cb1fb811fab89ff317d8825c9f831c8cbece0a5733f302e53f",
+  "snapshot_path": "data/raw/voluntary_leave_absence_students/source.pdf",
+  "source_type": "pdf",
+  "source_url": "https://policy.cornell.edu/sites/default/files/policy/vol7_1.pdf",
+  "title": "Voluntary Leave of Absence for Students",
+  "topic": "leaves_withdrawals"
+}
