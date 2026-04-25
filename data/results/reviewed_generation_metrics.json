@@ -203,7 +203,7 @@
   "dense_rerank_rag": {
     "answerable": {
       "num_questions": 75,
-      "reviewed_accuracy": 0.96,
+      "reviewed_accuracy": 0.9333333333333333,
       "reviewed_hallucination_rate": 0.013333333333333334,
       "reviewed_over_abstention_rate": 0.013333333333333334
     },
@@ -212,6 +212,13 @@
       "reviewed_citation_support_rate": 0.97
     },
     "flagged_rows": [
+      {
+        "manual_citation_supported": true,
+        "manual_correct": false,
+        "manual_hallucinated": false,
+        "manual_notes": "Incorrect relative to the benchmark target: the answer gives a different unofficial-withdrawal example from the same cited chunk instead of the gold example of enrolling but not attending classes.",
+        "question_id": "leaves_002"
+      },
       {
         "manual_citation_supported": true,
         "manual_correct": false,
@@ -228,9 +235,9 @@
       },
       {
         "manual_citation_supported": false,
-        "manual_correct": true,
+        "manual_correct": false,
         "manual_hallucinated": false,
-        "manual_notes": "Answer gives the correct no answer, but the cited chunks do not directly support the benchmark rule that academic faculty or staff should not request health information directly from the student.",
+        "manual_notes": "Incorrect under strict citation-grounding: the answer gives the correct no answer, but it does not cite the benchmark chunk that states academic faculty or staff should not request health information or records directly from the student.",
         "question_id": "voluntary_leave_013"
       },
       {
@@ -239,18 +246,25 @@
         "manual_hallucinated": false,
         "manual_notes": "Over-abstention/retrieval miss: Policy 7.3 gives the general-contact answer, but the retrieved evidence was from unrelated conduct documents.",
         "question_id": "title_iv_009"
+      },
+      {
+        "manual_citation_supported": true,
+        "manual_correct": false,
+        "manual_hallucinated": true,
+        "manual_notes": "Unsupported answer: the fixed corpus does not establish a general no answer to whether Student Code hearings are always video recorded; audio-recording evidence does not rule out video recording.",
+        "question_id": "unanswerable_023"
       }
     ],
     "major_hallucination_rate": 0.01,
     "num_reviewed": 100,
-    "reviewed_correct_rate": 0.97,
-    "reviewed_hallucination_rate": 0.01,
+    "reviewed_correct_rate": 0.94,
+    "reviewed_hallucination_rate": 0.02,
     "system": "dense_rerank_rag",
     "unanswerable": {
       "num_questions": 25,
-      "reviewed_correct_refusal_rate": 1.0,
-      "reviewed_false_answer_rate": 0.0,
-      "reviewed_hallucination_rate": 0.0
+      "reviewed_correct_refusal_rate": 0.96,
+      "reviewed_false_answer_rate": 0.04,
+      "reviewed_hallucination_rate": 0.04
     }
   },
   "non_rag": {
