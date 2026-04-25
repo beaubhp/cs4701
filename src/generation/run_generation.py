@@ -19,9 +19,10 @@ from src.generation.prompts import (
 )
 from src.retrieval.base import SearchResult
 from src.retrieval.bm25 import BM25Index
+from src.retrieval.rerank import DEFAULT_RERANKER_MODEL
 
 
-SYSTEMS = {"non_rag", "bm25_rag", "dense_rag"}
+SYSTEMS = {"non_rag", "bm25_rag", "dense_rag", "bm25_rerank_rag", "dense_rerank_rag"}
 
 
 def parse_args() -> argparse.Namespace:
@@ -31,6 +32,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--system", choices=sorted(SYSTEMS), required=True)
     parser.add_argument("--output", type=Path)
     parser.add_argument("--top-k", type=int, default=5)
+    parser.add_argument("--candidate-k", type=int, default=20)
+    parser.add_argument("--reranker-model", default=DEFAULT_RERANKER_MODEL)
     parser.add_argument("--model", default=DEFAULT_MODEL)
     parser.add_argument("--temperature", type=float, default=DEFAULT_TEMPERATURE)
     parser.add_argument("--limit", type=int)
@@ -46,6 +49,8 @@ def run_generation(
     system: str,
     output_path: Path,
     top_k: int,
+    candidate_k: int,
+    reranker_model: str,
     model: str,
     temperature: float,
     limit: int | None = None,
@@ -61,7 +66,7 @@ def run_generation(
 
     questions = select_questions(load_questions(questions_path), limit=limit, question_ids=question_ids)
     chunks_by_id = {chunk["chunk_id"]: chunk for chunk in read_jsonl(chunks_path)}
-    retriever = build_retriever(system, chunks_path)
+    retriever = build_retriever(system, chunks_path, candidate_k=candidate_k, reranker_model=reranker_model)
     generator = None if dry_run else build_generator(model, temperature)
 
     rows = []
@@ -132,7 +137,7 @@ def select_questions(
     return questions
 
 
-def build_retriever(system: str, chunks_path: Path):
+def build_retriever(system: str, chunks_path: Path, candidate_k: int, reranker_model: str):
     if system == "non_rag":
         return None
     if system == "bm25_rag":
@@ -141,6 +146,15 @@ def build_retriever(system: str, chunks_path: Path):
         from src.retrieval.dense import DenseIndex
 
         return DenseIndex.from_jsonl(chunks_path)
+    if system == "bm25_rerank_rag":
+        from src.retrieval.rerank import RerankingRetriever
+
+        return RerankingRetriever(BM25Index.from_jsonl(chunks_path), candidate_k=candidate_k, model_name=reranker_model)
+    if system == "dense_rerank_rag":
+        from src.retrieval.dense import DenseIndex
+        from src.retrieval.rerank import RerankingRetriever
+
+        return RerankingRetriever(DenseIndex.from_jsonl(chunks_path), candidate_k=candidate_k, model_name=reranker_model)
     raise ValueError(f"Unsupported generation system: {system}")
 
 
@@ -209,6 +223,8 @@ def main() -> None:
         system=args.system,
         output_path=args.output or default_output_path(args.system),
         top_k=args.top_k,
+        candidate_k=args.candidate_k,
+        reranker_model=args.reranker_model,
         model=args.model,
         temperature=args.temperature,
         limit=args.limit,

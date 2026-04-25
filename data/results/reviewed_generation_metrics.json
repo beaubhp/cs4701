@@ -59,6 +59,45 @@
       "reviewed_hallucination_rate": 0.04
     }
   },
+  "bm25_rerank_rag": {
+    "answerable": {
+      "num_questions": 75,
+      "reviewed_accuracy": 0.9733333333333334,
+      "reviewed_hallucination_rate": 0.0,
+      "reviewed_over_abstention_rate": 0.013333333333333334
+    },
+    "citations": {
+      "num_applicable_rows": 100,
+      "reviewed_citation_support_rate": 0.99
+    },
+    "flagged_rows": [
+      {
+        "manual_citation_supported": true,
+        "manual_correct": false,
+        "manual_hallucinated": false,
+        "manual_notes": "Incorrect/retrieval miss: the answer gives reportable enrollment-status changes, not the benchmark-supported statuses of enrolled, leave, graduated, and withdrawn.",
+        "question_id": "title_iv_002"
+      },
+      {
+        "manual_citation_supported": false,
+        "manual_correct": false,
+        "manual_hallucinated": false,
+        "manual_notes": "Over-abstention/retrieval miss: Policy 7.3 gives the general-contact answer, but the retrieved evidence was from voluntary leave documents.",
+        "question_id": "title_iv_009"
+      }
+    ],
+    "major_hallucination_rate": 0.0,
+    "num_reviewed": 100,
+    "reviewed_correct_rate": 0.98,
+    "reviewed_hallucination_rate": 0.0,
+    "system": "bm25_rerank_rag",
+    "unanswerable": {
+      "num_questions": 25,
+      "reviewed_correct_refusal_rate": 1.0,
+      "reviewed_false_answer_rate": 0.0,
+      "reviewed_hallucination_rate": 0.0
+    }
+  },
   "dense_rag": {
     "answerable": {
       "num_questions": 75,
@@ -154,6 +193,59 @@
     "reviewed_correct_rate": 0.91,
     "reviewed_hallucination_rate": 0.0,
     "system": "dense_rag",
+    "unanswerable": {
+      "num_questions": 25,
+      "reviewed_correct_refusal_rate": 1.0,
+      "reviewed_false_answer_rate": 0.0,
+      "reviewed_hallucination_rate": 0.0
+    }
+  },
+  "dense_rerank_rag": {
+    "answerable": {
+      "num_questions": 75,
+      "reviewed_accuracy": 0.96,
+      "reviewed_hallucination_rate": 0.013333333333333334,
+      "reviewed_over_abstention_rate": 0.013333333333333334
+    },
+    "citations": {
+      "num_applicable_rows": 100,
+      "reviewed_citation_support_rate": 0.97
+    },
+    "flagged_rows": [
+      {
+        "manual_citation_supported": true,
+        "manual_correct": false,
+        "manual_hallucinated": false,
+        "manual_notes": "Incorrect/retrieval miss: the answer gives reportable changes in enrollment status, not the benchmark-supported recognized statuses.",
+        "question_id": "title_iv_002"
+      },
+      {
+        "manual_citation_supported": false,
+        "manual_correct": false,
+        "manual_hallucinated": true,
+        "manual_notes": "Incorrect: the benchmark evidence says official notification can be oral; the answer says no and cites chunks that do not support the definition.",
+        "question_id": "title_iv_004"
+      },
+      {
+        "manual_citation_supported": false,
+        "manual_correct": true,
+        "manual_hallucinated": false,
+        "manual_notes": "Answer gives the correct no answer, but the cited chunks do not directly support the benchmark rule that academic faculty or staff should not request health information directly from the student.",
+        "question_id": "voluntary_leave_013"
+      },
+      {
+        "manual_citation_supported": false,
+        "manual_correct": false,
+        "manual_hallucinated": false,
+        "manual_notes": "Over-abstention/retrieval miss: Policy 7.3 gives the general-contact answer, but the retrieved evidence was from unrelated conduct documents.",
+        "question_id": "title_iv_009"
+      }
+    ],
+    "major_hallucination_rate": 0.01,
+    "num_reviewed": 100,
+    "reviewed_correct_rate": 0.97,
+    "reviewed_hallucination_rate": 0.01,
+    "system": "dense_rerank_rag",
     "unanswerable": {
       "num_questions": 25,
       "reviewed_correct_refusal_rate": 1.0,

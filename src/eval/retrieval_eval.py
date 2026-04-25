@@ -11,6 +11,7 @@ from src.corpus.schema import write_json, write_jsonl
 from src.eval.benchmark import load_questions, validate_benchmark
 from src.retrieval.base import Retriever, SearchResult
 from src.retrieval.bm25 import BM25Index
+from src.retrieval.rerank import DEFAULT_RERANKER_MODEL
 
 
 DEFAULT_K_VALUES = [1, 3, 5, 10]
@@ -20,7 +21,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Evaluate retrieval against benchmark qrels.")
     parser.add_argument("questions", type=Path, help="Path to data/benchmark/questions.jsonl")
     parser.add_argument("--chunks", type=Path, default=Path("data/processed/chunks.jsonl"))
-    parser.add_argument("--retriever", choices=["bm25", "dense"], default="bm25")
+    parser.add_argument("--retriever", choices=["bm25", "dense", "bm25_rerank", "dense_rerank"], default="bm25")
     parser.add_argument("--output", type=Path)
     parser.add_argument(
         "--predictions",
@@ -31,6 +32,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--dense-model", default="sentence-transformers/all-MiniLM-L6-v2")
     parser.add_argument("--embedding-cache", type=Path)
     parser.add_argument("--rebuild-embeddings", action="store_true")
+    parser.add_argument("--candidate-k", type=int, default=20)
+    parser.add_argument("--reranker-model", default=DEFAULT_RERANKER_MODEL)
     return parser.parse_args()
 
 
@@ -45,6 +48,8 @@ def evaluate(
     dense_model: str = "sentence-transformers/all-MiniLM-L6-v2",
     embedding_cache: Path | None = None,
     rebuild_embeddings: bool = False,
+    candidate_k: int = 20,
+    reranker_model: str = DEFAULT_RERANKER_MODEL,
 ) -> dict[str, Any]:
     validation = validate_benchmark(questions_path, chunks_path)
     if not validation.ok:
@@ -60,6 +65,8 @@ def evaluate(
         dense_model=dense_model,
         embedding_cache=embedding_cache,
         rebuild_embeddings=rebuild_embeddings,
+        candidate_k=candidate_k,
+        reranker_model=reranker_model,
     )
     k_values = [k for k in DEFAULT_K_VALUES if k <= top_k]
     if top_k not in k_values:
@@ -109,6 +116,8 @@ def build_retriever(
     dense_model: str,
     embedding_cache: Path | None,
     rebuild_embeddings: bool,
+    candidate_k: int,
+    reranker_model: str,
 ) -> Retriever:
     if retriever_name == "bm25":
         return BM25RetrieverWrapper(BM25Index.from_jsonl(chunks_path), expand=expand)
@@ -121,6 +130,22 @@ def build_retriever(
             cache_path=embedding_cache,
             rebuild_cache=rebuild_embeddings,
         )
+    if retriever_name == "bm25_rerank":
+        from src.retrieval.rerank import RerankingRetriever
+
+        base_retriever = BM25RetrieverWrapper(BM25Index.from_jsonl(chunks_path), expand=expand)
+        return RerankingRetriever(base_retriever, candidate_k=candidate_k, model_name=reranker_model)
+    if retriever_name == "dense_rerank":
+        from src.retrieval.dense import DenseIndex
+        from src.retrieval.rerank import RerankingRetriever
+
+        base_retriever = DenseIndex.from_jsonl(
+            chunks_path,
+            model_name=dense_model,
+            cache_path=embedding_cache,
+            rebuild_cache=rebuild_embeddings,
+        )
+        return RerankingRetriever(base_retriever, candidate_k=candidate_k, model_name=reranker_model)
     raise ValueError(f"Unsupported retriever: {retriever_name}")
 
 
@@ -273,6 +298,8 @@ def main() -> None:
         dense_model=args.dense_model,
         embedding_cache=args.embedding_cache,
         rebuild_embeddings=args.rebuild_embeddings,
+        candidate_k=args.candidate_k,
+        reranker_model=args.reranker_model,
     )
     print(json.dumps(metrics, indent=2, sort_keys=True))
 

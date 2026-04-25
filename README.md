@@ -77,6 +77,8 @@ unanswerable_type
 non_rag     OpenAI answer with no retrieved corpus context
 bm25_rag    Local Okapi BM25 retrieval + grounded generation
 dense_rag   SentenceTransformers dense retrieval + grounded generation
+bm25_rerank_rag   BM25 candidates + cross-encoder reranking + grounded generation
+dense_rerank_rag  Dense candidates + cross-encoder reranking + grounded generation
 ```
 
 Generation model:
@@ -84,6 +86,13 @@ Generation model:
 ```text
 gpt-5.4-mini
 temperature: 0
+```
+
+Reranker model:
+
+```text
+cross-encoder/ms-marco-MiniLM-L-6-v2
+candidate_k: 20
 ```
 
 ## Setup
@@ -137,6 +146,8 @@ unanswerable: 25
 ```bash
 python3 -m src.eval.retrieval_eval data/benchmark/questions.jsonl --retriever bm25
 python3 -m src.eval.retrieval_eval data/benchmark/questions.jsonl --retriever dense
+python3 -m src.eval.retrieval_eval data/benchmark/questions.jsonl --retriever bm25_rerank --candidate-k 20
+python3 -m src.eval.retrieval_eval data/benchmark/questions.jsonl --retriever dense_rerank --candidate-k 20
 python3 -m src.eval.compare_retrieval
 ```
 
@@ -147,7 +158,14 @@ data/results/retrieval_bm25.json
 data/results/retrieval_bm25_predictions.jsonl
 data/results/retrieval_dense.json
 data/results/retrieval_dense_predictions.jsonl
+data/results/retrieval_bm25_rerank.json
+data/results/retrieval_bm25_rerank_predictions.jsonl
+data/results/retrieval_dense_rerank.json
+data/results/retrieval_dense_rerank_predictions.jsonl
 data/results/retrieval_comparison.json
+data/results/retrieval_comparison_bm25_rerank.json
+data/results/retrieval_comparison_dense_rerank.json
+data/results/retrieval_comparison_reranked.json
 ```
 
 ## Run Generation
@@ -158,6 +176,8 @@ Requires `OPENAI_API_KEY`.
 python3 -m src.generation.run_generation data/benchmark/questions.jsonl --system non_rag
 python3 -m src.generation.run_generation data/benchmark/questions.jsonl --system bm25_rag
 python3 -m src.generation.run_generation data/benchmark/questions.jsonl --system dense_rag
+python3 -m src.generation.run_generation data/benchmark/questions.jsonl --system bm25_rerank_rag --candidate-k 20
+python3 -m src.generation.run_generation data/benchmark/questions.jsonl --system dense_rerank_rag --candidate-k 20
 ```
 
 Outputs:
@@ -166,6 +186,8 @@ Outputs:
 data/results/generations_non_rag.jsonl
 data/results/generations_bm25_rag.jsonl
 data/results/generations_dense_rag.jsonl
+data/results/generations_bm25_rerank_rag.jsonl
+data/results/generations_dense_rerank_rag.jsonl
 ```
 
 ## Run Heuristic Generation Evaluation
@@ -174,6 +196,8 @@ data/results/generations_dense_rag.jsonl
 python3 -m src.eval.generation_eval data/results/generations_non_rag.jsonl
 python3 -m src.eval.generation_eval data/results/generations_bm25_rag.jsonl
 python3 -m src.eval.generation_eval data/results/generations_dense_rag.jsonl
+python3 -m src.eval.generation_eval data/results/generations_bm25_rerank_rag.jsonl
+python3 -m src.eval.generation_eval data/results/generations_dense_rerank_rag.jsonl
 ```
 
 This writes heuristic metrics and review templates.
@@ -184,6 +208,8 @@ Final reviewed labels are stored in:
 data/results/generations_non_rag_review_template.jsonl
 data/results/generations_bm25_rag_review_template.jsonl
 data/results/generations_dense_rag_review_template.jsonl
+data/results/generations_bm25_rerank_rag_review_template.jsonl
+data/results/generations_dense_rerank_rag_review_template.jsonl
 ```
 
 Final reviewed metrics are stored in:
@@ -197,8 +223,10 @@ data/results/reviewed_generation_metrics.json
 Answerable questions only.
 
 ```text
-BM25   recall@1 73.3%   recall@3 93.3%   recall@5 98.7%   recall@10 98.7%   mrr 0.837
-Dense  recall@1 56.0%   recall@3 65.3%   recall@5 74.7%   recall@10 84.0%   mrr 0.632
+BM25          recall@1 73.3%   recall@3 93.3%   recall@5 98.7%   recall@10 98.7%    mrr 0.837
+BM25+rerank   recall@1 72.0%   recall@3 90.7%   recall@5 94.7%   recall@10 100.0%   mrr 0.812
+Dense         recall@1 56.0%   recall@3 65.3%   recall@5 74.7%   recall@10 84.0%    mrr 0.632
+Dense+rerank  recall@1 70.7%   recall@3 88.0%   recall@5 92.0%   recall@10 94.7%    mrr 0.793
 ```
 
 ## Reviewed Generation Results
@@ -206,9 +234,11 @@ Dense  recall@1 56.0%   recall@3 65.3%   recall@5 74.7%   recall@10 84.0%   mrr 
 Reviewed over all 100 questions.
 
 ```text
-non_rag    correct 34.0%   hallucination 54.0%   answerable_acc 32.0%   unanswerable_refusal 40.0%    citation_support n/a
-bm25_rag   correct 95.0%   hallucination 2.0%    answerable_acc 94.7%   unanswerable_refusal 96.0%    citation_support 98.0%
-dense_rag  correct 91.0%   hallucination 0.0%    answerable_acc 88.0%   unanswerable_refusal 100.0%   citation_support 92.0%
+non_rag           correct 34.0%   hallucination 54.0%   answerable_acc 32.0%   unanswerable_refusal 40.0%    citation_support n/a
+bm25_rag          correct 95.0%   hallucination 2.0%    answerable_acc 94.7%   unanswerable_refusal 96.0%    citation_support 98.0%
+dense_rag         correct 91.0%   hallucination 0.0%    answerable_acc 88.0%   unanswerable_refusal 100.0%   citation_support 92.0%
+bm25_rerank_rag   correct 98.0%   hallucination 0.0%    answerable_acc 97.3%   unanswerable_refusal 100.0%   citation_support 99.0%
+dense_rerank_rag  correct 97.0%   hallucination 1.0%    answerable_acc 96.0%   unanswerable_refusal 100.0%   citation_support 97.0%
 ```
 
 ## Review Labels

@@ -1,0 +1,39 @@
+{
+  "answerable": {
+    "num_questions": 75,
+    "reviewed_accuracy": 0.9733333333333334,
+    "reviewed_hallucination_rate": 0.0,
+    "reviewed_over_abstention_rate": 0.013333333333333334
+  },
+  "citations": {
+    "num_applicable_rows": 100,
+    "reviewed_citation_support_rate": 0.99
+  },
+  "flagged_rows": [
+    {
+      "manual_citation_supported": true,
+      "manual_correct": false,
+      "manual_hallucinated": false,
+      "manual_notes": "Incorrect/retrieval miss: the answer gives reportable enrollment-status changes, not the benchmark-supported statuses of enrolled, leave, graduated, and withdrawn.",
+      "question_id": "title_iv_002"
+    },
+    {
+      "manual_citation_supported": false,
+      "manual_correct": false,
+      "manual_hallucinated": false,
+      "manual_notes": "Over-abstention/retrieval miss: Policy 7.3 gives the general-contact answer, but the retrieved evidence was from voluntary leave documents.",
+      "question_id": "title_iv_009"
+    }
+  ],
+  "major_hallucination_rate": 0.0,
+  "num_reviewed": 100,
+  "reviewed_correct_rate": 0.98,
+  "reviewed_hallucination_rate": 0.0,
+  "system": "bm25_rerank_rag",
+  "unanswerable": {
+    "num_questions": 25,
+    "reviewed_correct_refusal_rate": 1.0,
+    "reviewed_false_answer_rate": 0.0,
+    "reviewed_hallucination_rate": 0.0
+  }
+}
