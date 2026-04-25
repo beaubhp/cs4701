@@ -1,0 +1,315 @@
+{
+  "bm25_rag": {
+    "answerable": {
+      "num_questions": 36,
+      "reviewed_accuracy": 0.9444444444444444,
+      "reviewed_hallucination_rate": 0.027777777777777776,
+      "reviewed_over_abstention_rate": 0.0
+    },
+    "citations": {
+      "num_applicable_rows": 48,
+      "reviewed_citation_support_rate": 0.9791666666666666
+    },
+    "flagged_rows": [
+      {
+        "manual_citation_supported": true,
+        "manual_correct": false,
+        "manual_hallucinated": false,
+        "manual_notes": "Incorrect: the answer treats \u201cGraduated-Withdrawn\u201d as a single item and does not give the gold set of enrolled, leave, graduated, and withdrawn.",
+        "question_id": "title_iv_002"
+      },
+      {
+        "manual_citation_supported": false,
+        "manual_correct": false,
+        "manual_hallucinated": true,
+        "manual_notes": "Cross-policy conflation: the Student Code hearing notice answer correctly gives ten business days, but it misleadingly adds a seven-day Academic Integrity Hearing Board notice rule as if it applied to the Student Code hearing question.",
+        "question_id": "procedures_005"
+      }
+    ],
+    "major_hallucination_rate": 0.020833333333333332,
+    "num_reviewed": 48,
+    "reviewed_correct_rate": 0.9583333333333334,
+    "reviewed_hallucination_rate": 0.020833333333333332,
+    "system": "bm25_rag",
+    "unanswerable": {
+      "num_questions": 12,
+      "reviewed_correct_refusal_rate": 1.0,
+      "reviewed_false_answer_rate": 0.0,
+      "reviewed_hallucination_rate": 0.0
+    }
+  },
+  "dense_rag": {
+    "answerable": {
+      "num_questions": 36,
+      "reviewed_accuracy": 0.8888888888888888,
+      "reviewed_hallucination_rate": 0.0,
+      "reviewed_over_abstention_rate": 0.05555555555555555
+    },
+    "citations": {
+      "num_applicable_rows": 48,
+      "reviewed_citation_support_rate": 0.9583333333333334
+    },
+    "flagged_rows": [
+      {
+        "manual_citation_supported": true,
+        "manual_correct": false,
+        "manual_hallucinated": false,
+        "manual_notes": "Over-abstention/retrieval miss: the corpus answers this directly; students on LOA may not enroll in Cornell courses during the leave.",
+        "question_id": "leaves_001"
+      },
+      {
+        "manual_citation_supported": true,
+        "manual_correct": false,
+        "manual_hallucinated": false,
+        "manual_notes": "Incorrect/retrieval miss: the answer does not provide the return-deadline table in the benchmark evidence and instead says the retrieved evidence does not give a specific return request deadline.",
+        "question_id": "leaves_003"
+      },
+      {
+        "manual_citation_supported": true,
+        "manual_correct": false,
+        "manual_hallucinated": false,
+        "manual_notes": "Incorrect/retrieval miss: the answer gives request timing and deadline information, but it misses the benchmark-supported reason for HLOA: disability accommodation or time to pursue treatment/attend to a health condition.",
+        "question_id": "voluntary_leave_001"
+      },
+      {
+        "manual_citation_supported": true,
+        "manual_correct": false,
+        "manual_hallucinated": false,
+        "manual_notes": "Over-abstention/retrieval miss: the corpus enumerates the recognized statuses, but the retrieved evidence did not surface them clearly.",
+        "question_id": "title_iv_002"
+      },
+      {
+        "manual_citation_supported": false,
+        "manual_correct": true,
+        "manual_hallucinated": false,
+        "manual_notes": "Answer is substantively correct, but the cited chunks discuss Hearing Board recommendations and appeals rather than the primary-hearing rule that a faculty member may impose any suitable grade punishment, including failure in the course.",
+        "question_id": "academic_006"
+      },
+      {
+        "manual_citation_supported": false,
+        "manual_correct": true,
+        "manual_hallucinated": false,
+        "manual_notes": "Correctly avoids giving a gym-membership refund rule, but the cited chunks do not support the added advice to contact the Office of the Bursar or a college/unit administrative office for this specific gym refund question.",
+        "question_id": "unanswerable_010"
+      }
+    ],
+    "major_hallucination_rate": 0.0,
+    "num_reviewed": 48,
+    "reviewed_correct_rate": 0.9166666666666666,
+    "reviewed_hallucination_rate": 0.0,
+    "system": "dense_rag",
+    "unanswerable": {
+      "num_questions": 12,
+      "reviewed_correct_refusal_rate": 1.0,
+      "reviewed_false_answer_rate": 0.0,
+      "reviewed_hallucination_rate": 0.0
+    }
+  },
+  "non_rag": {
+    "answerable": {
+      "num_questions": 36,
+      "reviewed_accuracy": 0.5277777777777778,
+      "reviewed_hallucination_rate": 0.5277777777777778,
+      "reviewed_over_abstention_rate": 0.0
+    },
+    "citations": {
+      "num_applicable_rows": 0,
+      "reviewed_citation_support_rate": 0.0
+    },
+    "flagged_rows": [
+      {
+        "manual_citation_supported": null,
+        "manual_correct": false,
+        "manual_hallucinated": true,
+        "manual_notes": "Incorrect: the benchmark evidence says a University Hearing Panel is five people, not three. No citations were expected for the non-RAG baseline.",
+        "question_id": "procedures_001"
+      },
+      {
+        "manual_citation_supported": null,
+        "manual_correct": false,
+        "manual_hallucinated": true,
+        "manual_notes": "Incorrect: the answer does not identify the three-person Hearing and Review Board Review Panel that hears appeals. No citations were expected for the non-RAG baseline.",
+        "question_id": "procedures_002"
+      },
+      {
+        "manual_citation_supported": null,
+        "manual_correct": false,
+        "manual_hallucinated": true,
+        "manual_notes": "Incorrect: the benchmark evidence says appeals must be submitted within ten business days, not five. No citations were expected for the non-RAG baseline.",
+        "question_id": "procedures_003"
+      },
+      {
+        "manual_citation_supported": null,
+        "manual_correct": false,
+        "manual_hallucinated": true,
+        "manual_notes": "Incorrect/too loose: the benchmark evidence requires all outside assistance to be acknowledged and the student's academic position truthfully reported; the answer softens this to permitted help and acknowledgement when required. No citations were expected for the non-RAG baseline.",
+        "question_id": "academic_001"
+      },
+      {
+        "manual_citation_supported": null,
+        "manual_correct": false,
+        "manual_hallucinated": true,
+        "manual_notes": "Incorrect: the benchmark evidence states at least one week of notice, not five business days. No citations were expected for the non-RAG baseline.",
+        "question_id": "academic_003"
+      },
+      {
+        "manual_citation_supported": null,
+        "manual_correct": false,
+        "manual_hallucinated": true,
+        "manual_notes": "Incorrect: the answer omits the specific return deadlines listed in the benchmark evidence and substitutes a vague deadline description. No citations were expected for the non-RAG baseline.",
+        "question_id": "leaves_003"
+      },
+      {
+        "manual_citation_supported": null,
+        "manual_correct": false,
+        "manual_hallucinated": true,
+        "manual_notes": "Incorrect: the policy says the deadline is the last day of the term, not the last day of classes. No citations were expected for the non-RAG baseline.",
+        "question_id": "voluntary_leave_002"
+      },
+      {
+        "manual_citation_supported": null,
+        "manual_correct": false,
+        "manual_hallucinated": true,
+        "manual_notes": "Incorrect: the policy says a PLOA is for an opportunity or personal circumstances not related to a health condition; the answer includes health-related reasons. No citations were expected for the non-RAG baseline.",
+        "question_id": "voluntary_leave_003"
+      },
+      {
+        "manual_citation_supported": null,
+        "manual_correct": false,
+        "manual_hallucinated": true,
+        "manual_notes": "Incorrect: the answer misses the full set of recognized enrollment statuses and does not match the benchmark evidence. No citations were expected for the non-RAG baseline.",
+        "question_id": "title_iv_002"
+      },
+      {
+        "manual_citation_supported": null,
+        "manual_correct": false,
+        "manual_hallucinated": true,
+        "manual_notes": "Incorrect: the benchmark evidence says OUR reports withdrawals and leaves to NSLDS within 60 days, not the financial aid office within 30 days. No citations were expected for the non-RAG baseline.",
+        "question_id": "title_iv_003"
+      },
+      {
+        "manual_citation_supported": null,
+        "manual_correct": false,
+        "manual_hallucinated": true,
+        "manual_notes": "Unsupported answer: the fixed corpus does not state a general ChatGPT rule based on citation. No citations were expected for the non-RAG baseline.",
+        "question_id": "unanswerable_003"
+      },
+      {
+        "manual_citation_supported": null,
+        "manual_correct": false,
+        "manual_hallucinated": true,
+        "manual_notes": "Unsupported answer: the fixed corpus does not provide meal-plan refund rules or fifth-week refund amounts. No citations were expected for the non-RAG baseline.",
+        "question_id": "unanswerable_004"
+      },
+      {
+        "manual_citation_supported": null,
+        "manual_correct": false,
+        "manual_hallucinated": true,
+        "manual_notes": "Unsupported answer: the fixed corpus does not provide enough case-specific information to compute or state what would be owed after 40 percent completion. No citations were expected for the non-RAG baseline.",
+        "question_id": "unanswerable_006"
+      },
+      {
+        "manual_citation_supported": null,
+        "manual_correct": false,
+        "manual_hallucinated": true,
+        "manual_notes": "Incorrect/overbroad: the Student Code benchmark defines bribery as bribing a University employee or student for personal gain; the answer adds broader unsupported conduct such as soliciting or accepting benefits to influence outcomes. No citations were expected for the non-RAG baseline.",
+        "question_id": "conduct_005"
+      },
+      {
+        "manual_citation_supported": null,
+        "manual_correct": false,
+        "manual_hallucinated": false,
+        "manual_notes": "Incomplete: the benchmark evidence says the Director notifies the complainant and respondent in writing and provides the complaint, Code, and Procedures; the answer gives only generic investigation-notice language. No citations were expected for the non-RAG baseline.",
+        "question_id": "procedures_004"
+      },
+      {
+        "manual_citation_supported": null,
+        "manual_correct": false,
+        "manual_hallucinated": true,
+        "manual_notes": "Incorrect: the benchmark evidence says notice should be provided no less than ten business days before the hearing, not 24 hours. No citations were expected for the non-RAG baseline.",
+        "question_id": "procedures_005"
+      },
+      {
+        "manual_citation_supported": null,
+        "manual_correct": false,
+        "manual_hallucinated": true,
+        "manual_notes": "Incorrect: the benchmark evidence says the appeal statement limit is 3,500 words, not 500. No citations were expected for the non-RAG baseline.",
+        "question_id": "procedures_006"
+      },
+      {
+        "manual_citation_supported": null,
+        "manual_correct": false,
+        "manual_hallucinated": true,
+        "manual_notes": "Incorrect/unsupported limitation: the benchmark evidence says the faculty member may impose any suitable grade punishment including failure in the course; the answer adds an unsupported narrowing about penalties usually being limited to an assignment or course component unless a formal process is used. No citations were expected for the non-RAG baseline.",
+        "question_id": "academic_006"
+      },
+      {
+        "manual_citation_supported": null,
+        "manual_correct": true,
+        "manual_hallucinated": true,
+        "manual_notes": "Correct core answer, but adds an unsupported caveat that limited library or online-resource access may remain even though the benchmark evidence says students on LOA are not eligible for services such as housing, dining, library, and transportation. No citations were expected for the non-RAG baseline.",
+        "question_id": "leaves_004"
+      },
+      {
+        "manual_citation_supported": null,
+        "manual_correct": true,
+        "manual_hallucinated": true,
+        "manual_notes": "Correct core answer, but adds an unsupported claim about future Title IV eligibility being affected until repayment or completion steps are resolved. No citations were expected for the non-RAG baseline.",
+        "question_id": "leaves_005"
+      },
+      {
+        "manual_citation_supported": null,
+        "manual_correct": true,
+        "manual_hallucinated": true,
+        "manual_notes": "Correct core answer, but adds unsupported advice that Cornell would usually treat the situation as a deferral or postponement request. No citations were expected for the non-RAG baseline.",
+        "question_id": "voluntary_leave_004"
+      },
+      {
+        "manual_citation_supported": null,
+        "manual_correct": false,
+        "manual_hallucinated": true,
+        "manual_notes": "Incorrect: Policy 7.3 says official notification can be written, electronic, or oral. No citations were expected for the non-RAG baseline.",
+        "question_id": "title_iv_004"
+      },
+      {
+        "manual_citation_supported": null,
+        "manual_correct": false,
+        "manual_hallucinated": true,
+        "manual_notes": "Incorrect: NSLDS enrollment data errors must be corrected and resubmitted within 10 days, not 30 days. No citations were expected for the non-RAG baseline.",
+        "question_id": "title_iv_005"
+      },
+      {
+        "manual_citation_supported": null,
+        "manual_correct": false,
+        "manual_hallucinated": true,
+        "manual_notes": "Unsupported answer: the corpus requires a written appeal statement but does not decide whether text-message submission is valid. No citations were expected for the non-RAG baseline.",
+        "question_id": "unanswerable_008"
+      },
+      {
+        "manual_citation_supported": null,
+        "manual_correct": false,
+        "manual_hallucinated": true,
+        "manual_notes": "Unsupported answer: the fixed corpus does not state gym or recreation membership refund rules. No citations were expected for the non-RAG baseline.",
+        "question_id": "unanswerable_010"
+      },
+      {
+        "manual_citation_supported": null,
+        "manual_correct": false,
+        "manual_hallucinated": true,
+        "manual_notes": "Unsupported answer: the fixed corpus does not provide a universal maximum number of months for every HLOA. No citations were expected for the non-RAG baseline.",
+        "question_id": "unanswerable_011"
+      }
+    ],
+    "major_hallucination_rate": 0.3958333333333333,
+    "num_reviewed": 48,
+    "reviewed_correct_rate": 0.5208333333333334,
+    "reviewed_hallucination_rate": 0.5208333333333334,
+    "system": "non_rag",
+    "unanswerable": {
+      "num_questions": 12,
+      "reviewed_correct_refusal_rate": 0.5,
+      "reviewed_false_answer_rate": 0.5,
+      "reviewed_hallucination_rate": 0.5
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "answerable": {
+    "num_questions": 36,
+    "reviewed_accuracy": 0.8888888888888888,
+    "reviewed_hallucination_rate": 0.0,
+    "reviewed_over_abstention_rate": 0.05555555555555555
+  },
+  "citations": {
+    "num_applicable_rows": 48,
+    "reviewed_citation_support_rate": 0.9583333333333334
+  },
+  "flagged_rows": [
+    {
+      "manual_citation_supported": true,
+      "manual_correct": false,
+      "manual_hallucinated": false,
+      "manual_notes": "Over-abstention/retrieval miss: the corpus answers this directly; students on LOA may not enroll in Cornell courses during the leave.",
+      "question_id": "leaves_001"
+    },
+    {
+      "manual_citation_supported": true,
+      "manual_correct": false,
+      "manual_hallucinated": false,
+      "manual_notes": "Incorrect/retrieval miss: the answer does not provide the return-deadline table in the benchmark evidence and instead says the retrieved evidence does not give a specific return request deadline.",
+      "question_id": "leaves_003"
+    },
+    {
+      "manual_citation_supported": true,
+      "manual_correct": false,
+      "manual_hallucinated": false,
+      "manual_notes": "Incorrect/retrieval miss: the answer gives request timing and deadline information, but it misses the benchmark-supported reason for HLOA: disability accommodation or time to pursue treatment/attend to a health condition.",
+      "question_id": "voluntary_leave_001"
+    },
+    {
+      "manual_citation_supported": true,
+      "manual_correct": false,
+      "manual_hallucinated": false,
+      "manual_notes": "Over-abstention/retrieval miss: the corpus enumerates the recognized statuses, but the retrieved evidence did not surface them clearly.",
+      "question_id": "title_iv_002"
+    },
+    {
+      "manual_citation_supported": false,
+      "manual_correct": true,
+      "manual_hallucinated": false,
+      "manual_notes": "Answer is substantively correct, but the cited chunks discuss Hearing Board recommendations and appeals rather than the primary-hearing rule that a faculty member may impose any suitable grade punishment, including failure in the course.",
+      "question_id": "academic_006"
+    },
+    {
+      "manual_citation_supported": false,
+      "manual_correct": true,
+      "manual_hallucinated": false,
+      "manual_notes": "Correctly avoids giving a gym-membership refund rule, but the cited chunks do not support the added advice to contact the Office of the Bursar or a college/unit administrative office for this specific gym refund question.",
+      "question_id": "unanswerable_010"
+    }
+  ],
+  "major_hallucination_rate": 0.0,
+  "num_reviewed": 48,
+  "reviewed_correct_rate": 0.9166666666666666,
+  "reviewed_hallucination_rate": 0.0,
+  "system": "dense_rag",
+  "unanswerable": {
+    "num_questions": 12,
+    "reviewed_correct_refusal_rate": 1.0,
+    "reviewed_false_answer_rate": 0.0,
+    "reviewed_hallucination_rate": 0.0
+  }
+}

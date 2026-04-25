@@ -1,0 +1,39 @@
+{
+  "answerable": {
+    "num_questions": 36,
+    "reviewed_accuracy": 0.9444444444444444,
+    "reviewed_hallucination_rate": 0.027777777777777776,
+    "reviewed_over_abstention_rate": 0.0
+  },
+  "citations": {
+    "num_applicable_rows": 48,
+    "reviewed_citation_support_rate": 0.9791666666666666
+  },
+  "flagged_rows": [
+    {
+      "manual_citation_supported": true,
+      "manual_correct": false,
+      "manual_hallucinated": false,
+      "manual_notes": "Incorrect: the answer treats \u201cGraduated-Withdrawn\u201d as a single item and does not give the gold set of enrolled, leave, graduated, and withdrawn.",
+      "question_id": "title_iv_002"
+    },
+    {
+      "manual_citation_supported": false,
+      "manual_correct": false,
+      "manual_hallucinated": true,
+      "manual_notes": "Cross-policy conflation: the Student Code hearing notice answer correctly gives ten business days, but it misleadingly adds a seven-day Academic Integrity Hearing Board notice rule as if it applied to the Student Code hearing question.",
+      "question_id": "procedures_005"
+    }
+  ],
+  "major_hallucination_rate": 0.020833333333333332,
+  "num_reviewed": 48,
+  "reviewed_correct_rate": 0.9583333333333334,
+  "reviewed_hallucination_rate": 0.020833333333333332,
+  "system": "bm25_rag",
+  "unanswerable": {
+    "num_questions": 12,
+    "reviewed_correct_refusal_rate": 1.0,
+    "reviewed_false_answer_rate": 0.0,
+    "reviewed_hallucination_rate": 0.0
+  }
+}
