@@ -36,7 +36,6 @@
     "num_questions": 48,
     "question_types": {
       "acronym": 4,
-      "case_specific_judgment": 1,
       "deadline": 7,
       "definition": 3,
       "external_dependency": 3,
@@ -47,7 +46,7 @@
       "procedure": 5,
       "unanswerable_policy_detail": 1,
       "unsupported_deadline": 1,
-      "unsupported_specific_detail": 2
+      "unsupported_specific_detail": 3
     },
     "topics": {
       "academic_integrity": 8,
@@ -270,7 +269,7 @@
     "top_k": 10
   },
   "unanswerable": {
-    "avg_top_score": 0.5307484890023867,
+    "avg_top_score": 0.5386218652129173,
     "max_top_score": 0.6635353565216064,
     "near_miss_doc@1": 0.9166666666666666,
     "near_miss_doc@10": 1,

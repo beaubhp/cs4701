@@ -1,6 +1,8 @@
 beautifulsoup4
 numpy
+openai
 pypdf
+python-dotenv
 pyyaml
 requests
 sentence-transformers
