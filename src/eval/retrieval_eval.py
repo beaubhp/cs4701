@@ -9,24 +9,28 @@ from typing import Any
 
 from src.corpus.schema import write_json, write_jsonl
 from src.eval.benchmark import load_questions, validate_benchmark
-from src.retrieval.bm25 import BM25Index, SearchResult
+from src.retrieval.base import Retriever, SearchResult
+from src.retrieval.bm25 import BM25Index
 
 
 DEFAULT_K_VALUES = [1, 3, 5, 10]
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Evaluate BM25 retrieval against benchmark qrels.")
+    parser = argparse.ArgumentParser(description="Evaluate retrieval against benchmark qrels.")
     parser.add_argument("questions", type=Path, help="Path to data/benchmark/questions.jsonl")
     parser.add_argument("--chunks", type=Path, default=Path("data/processed/chunks.jsonl"))
-    parser.add_argument("--output", type=Path, default=Path("data/results/retrieval_bm25.json"))
+    parser.add_argument("--retriever", choices=["bm25", "dense"], default="bm25")
+    parser.add_argument("--output", type=Path)
     parser.add_argument(
         "--predictions",
         type=Path,
-        default=Path("data/results/retrieval_bm25_predictions.jsonl"),
     )
     parser.add_argument("--top-k", type=int, default=10)
     parser.add_argument("--expand", action="store_true", help="Use deterministic query expansion.")
+    parser.add_argument("--dense-model", default="sentence-transformers/all-MiniLM-L6-v2")
+    parser.add_argument("--embedding-cache", type=Path)
+    parser.add_argument("--rebuild-embeddings", action="store_true")
     return parser.parse_args()
 
 
@@ -37,6 +41,10 @@ def evaluate(
     predictions_path: Path,
     top_k: int,
     expand: bool,
+    retriever_name: str = "bm25",
+    dense_model: str = "sentence-transformers/all-MiniLM-L6-v2",
+    embedding_cache: Path | None = None,
+    rebuild_embeddings: bool = False,
 ) -> dict[str, Any]:
     validation = validate_benchmark(questions_path, chunks_path)
     if not validation.ok:
@@ -45,7 +53,14 @@ def evaluate(
         raise SystemExit(1)
 
     questions = load_questions(questions_path)
-    index = BM25Index.from_jsonl(chunks_path)
+    retriever = build_retriever(
+        retriever_name=retriever_name,
+        chunks_path=chunks_path,
+        expand=expand,
+        dense_model=dense_model,
+        embedding_cache=embedding_cache,
+        rebuild_embeddings=rebuild_embeddings,
+    )
     k_values = [k for k in DEFAULT_K_VALUES if k <= top_k]
     if top_k not in k_values:
         k_values.append(top_k)
@@ -56,7 +71,7 @@ def evaluate(
     unanswerable_rows: list[dict[str, Any]] = []
 
     for question in questions:
-        results = index.search(question["question"], top_k=top_k, expand=expand)
+        results = retriever.search(question["question"], top_k=top_k)
         qrel_map = {qrel["chunk_id"]: qrel["relevance"] for qrel in question.get("qrels", [])}
         row = prediction_row(question, results, qrel_map)
         predictions.append(row)
@@ -67,16 +82,7 @@ def evaluate(
 
     metrics = {
         "benchmark": validation.summary,
-        "retriever": {
-            "name": "local_okapi_bm25",
-            "top_k": top_k,
-            "query_expansion": expand,
-            "k_values": k_values,
-            "k1": index.k1,
-            "b": index.b,
-            "num_chunks": index.num_docs,
-            "avg_indexed_doc_len": index.avg_doc_len,
-        },
+        "retriever": retriever_metadata(retriever, top_k=top_k, k_values=k_values, expand=expand),
         "answerable": answerable_metrics(answerable_rows, k_values),
         "unanswerable": unanswerable_metrics(unanswerable_rows, k_values),
         "by_topic": grouped_answerable_metrics(answerable_rows, "topic", k_values),
@@ -87,6 +93,57 @@ def evaluate(
     write_json(output_path, metrics)
     write_jsonl(predictions_path, predictions)
     return metrics
+
+
+def default_output_paths(retriever_name: str) -> tuple[Path, Path]:
+    return (
+        Path(f"data/results/retrieval_{retriever_name}.json"),
+        Path(f"data/results/retrieval_{retriever_name}_predictions.jsonl"),
+    )
+
+
+def build_retriever(
+    retriever_name: str,
+    chunks_path: Path,
+    expand: bool,
+    dense_model: str,
+    embedding_cache: Path | None,
+    rebuild_embeddings: bool,
+) -> Retriever:
+    if retriever_name == "bm25":
+        return BM25RetrieverWrapper(BM25Index.from_jsonl(chunks_path), expand=expand)
+    if retriever_name == "dense":
+        from src.retrieval.dense import DenseIndex
+
+        return DenseIndex.from_jsonl(
+            chunks_path,
+            model_name=dense_model,
+            cache_path=embedding_cache,
+            rebuild_cache=rebuild_embeddings,
+        )
+    raise ValueError(f"Unsupported retriever: {retriever_name}")
+
+
+class BM25RetrieverWrapper:
+    def __init__(self, index: BM25Index, expand: bool = False) -> None:
+        self.index = index
+        self.expand = expand
+
+    def search(self, query: str, top_k: int = 5) -> list[SearchResult]:
+        return self.index.search(query, top_k=top_k, expand=self.expand)
+
+    def describe(self) -> dict:
+        metadata = self.index.describe()
+        metadata["query_expansion"] = self.expand
+        return metadata
+
+
+def retriever_metadata(retriever: Retriever, top_k: int, k_values: list[int], expand: bool) -> dict[str, Any]:
+    metadata = retriever.describe()
+    metadata["top_k"] = top_k
+    metadata["k_values"] = k_values
+    metadata.setdefault("query_expansion", expand)
+    return metadata
 
 
 def prediction_row(
@@ -204,13 +261,18 @@ def discounted_cumulative_gain(gains: list[int]) -> float:
 
 def main() -> None:
     args = parse_args()
+    default_output, default_predictions = default_output_paths(args.retriever)
     metrics = evaluate(
         questions_path=args.questions,
         chunks_path=args.chunks,
-        output_path=args.output,
-        predictions_path=args.predictions,
+        output_path=args.output or default_output,
+        predictions_path=args.predictions or default_predictions,
         top_k=args.top_k,
         expand=args.expand,
+        retriever_name=args.retriever,
+        dense_model=args.dense_model,
+        embedding_cache=args.embedding_cache,
+        rebuild_embeddings=args.rebuild_embeddings,
     )
     print(json.dumps(metrics, indent=2, sort_keys=True))
 

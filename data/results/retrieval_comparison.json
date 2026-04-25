@@ -1,0 +1,936 @@
+{
+  "grouped": {
+    "difficulty": {
+      "easy": {
+        "k=1": {
+          "bm25_only": 2,
+          "both_hit": 6,
+          "both_miss": 1,
+          "dense_only": 1
+        },
+        "k=10": {
+          "bm25_only": 0,
+          "both_hit": 10,
+          "both_miss": 0,
+          "dense_only": 0
+        },
+        "k=3": {
+          "bm25_only": 2,
+          "both_hit": 7,
+          "both_miss": 0,
+          "dense_only": 1
+        },
+        "k=5": {
+          "bm25_only": 2,
+          "both_hit": 8,
+          "both_miss": 0,
+          "dense_only": 0
+        }
+      },
+      "hard": {
+        "k=1": {
+          "bm25_only": 2,
+          "both_hit": 0,
+          "both_miss": 2,
+          "dense_only": 0
+        },
+        "k=10": {
+          "bm25_only": 3,
+          "both_hit": 1,
+          "both_miss": 0,
+          "dense_only": 0
+        },
+        "k=3": {
+          "bm25_only": 3,
+          "both_hit": 0,
+          "both_miss": 1,
+          "dense_only": 0
+        },
+        "k=5": {
+          "bm25_only": 4,
+          "both_hit": 0,
+          "both_miss": 0,
+          "dense_only": 0
+        }
+      },
+      "medium": {
+        "k=1": {
+          "bm25_only": 4,
+          "both_hit": 10,
+          "both_miss": 6,
+          "dense_only": 2
+        },
+        "k=10": {
+          "bm25_only": 2,
+          "both_hit": 20,
+          "both_miss": 0,
+          "dense_only": 0
+        },
+        "k=3": {
+          "bm25_only": 7,
+          "both_hit": 14,
+          "both_miss": 0,
+          "dense_only": 1
+        },
+        "k=5": {
+          "bm25_only": 5,
+          "both_hit": 17,
+          "both_miss": 0,
+          "dense_only": 0
+        }
+      }
+    },
+    "question_type": {
+      "acronym": {
+        "k=1": {
+          "bm25_only": 0,
+          "both_hit": 1,
+          "both_miss": 3,
+          "dense_only": 0
+        },
+        "k=10": {
+          "bm25_only": 1,
+          "both_hit": 3,
+          "both_miss": 0,
+          "dense_only": 0
+        },
+        "k=3": {
+          "bm25_only": 2,
+          "both_hit": 2,
+          "both_miss": 0,
+          "dense_only": 0
+        },
+        "k=5": {
+          "bm25_only": 1,
+          "both_hit": 3,
+          "both_miss": 0,
+          "dense_only": 0
+        }
+      },
+      "deadline": {
+        "k=1": {
+          "bm25_only": 3,
+          "both_hit": 3,
+          "both_miss": 0,
+          "dense_only": 1
+        },
+        "k=10": {
+          "bm25_only": 1,
+          "both_hit": 6,
+          "both_miss": 0,
+          "dense_only": 0
+        },
+        "k=3": {
+          "bm25_only": 2,
+          "both_hit": 5,
+          "both_miss": 0,
+          "dense_only": 0
+        },
+        "k=5": {
+          "bm25_only": 2,
+          "both_hit": 5,
+          "both_miss": 0,
+          "dense_only": 0
+        }
+      },
+      "definition": {
+        "k=1": {
+          "bm25_only": 2,
+          "both_hit": 0,
+          "both_miss": 0,
+          "dense_only": 1
+        },
+        "k=10": {
+          "bm25_only": 1,
+          "both_hit": 2,
+          "both_miss": 0,
+          "dense_only": 0
+        },
+        "k=3": {
+          "bm25_only": 2,
+          "both_hit": 0,
+          "both_miss": 0,
+          "dense_only": 1
+        },
+        "k=5": {
+          "bm25_only": 2,
+          "both_hit": 1,
+          "both_miss": 0,
+          "dense_only": 0
+        }
+      },
+      "keyword": {
+        "k=1": {
+          "bm25_only": 1,
+          "both_hit": 4,
+          "both_miss": 0,
+          "dense_only": 0
+        },
+        "k=10": {
+          "bm25_only": 0,
+          "both_hit": 5,
+          "both_miss": 0,
+          "dense_only": 0
+        },
+        "k=3": {
+          "bm25_only": 1,
+          "both_hit": 4,
+          "both_miss": 0,
+          "dense_only": 0
+        },
+        "k=5": {
+          "bm25_only": 1,
+          "both_hit": 4,
+          "both_miss": 0,
+          "dense_only": 0
+        }
+      },
+      "paraphrase": {
+        "k=1": {
+          "bm25_only": 1,
+          "both_hit": 6,
+          "both_miss": 5,
+          "dense_only": 0
+        },
+        "k=10": {
+          "bm25_only": 1,
+          "both_hit": 11,
+          "both_miss": 0,
+          "dense_only": 0
+        },
+        "k=3": {
+          "bm25_only": 4,
+          "both_hit": 7,
+          "both_miss": 1,
+          "dense_only": 0
+        },
+        "k=5": {
+          "bm25_only": 4,
+          "both_hit": 8,
+          "both_miss": 0,
+          "dense_only": 0
+        }
+      },
+      "procedure": {
+        "k=1": {
+          "bm25_only": 1,
+          "both_hit": 2,
+          "both_miss": 1,
+          "dense_only": 1
+        },
+        "k=10": {
+          "bm25_only": 1,
+          "both_hit": 4,
+          "both_miss": 0,
+          "dense_only": 0
+        },
+        "k=3": {
+          "bm25_only": 1,
+          "both_hit": 3,
+          "both_miss": 0,
+          "dense_only": 1
+        },
+        "k=5": {
+          "bm25_only": 1,
+          "both_hit": 4,
+          "both_miss": 0,
+          "dense_only": 0
+        }
+      }
+    },
+    "topic": {
+      "academic_integrity": {
+        "k=1": {
+          "bm25_only": 0,
+          "both_hit": 4,
+          "both_miss": 2,
+          "dense_only": 0
+        },
+        "k=10": {
+          "bm25_only": 1,
+          "both_hit": 5,
+          "both_miss": 0,
+          "dense_only": 0
+        },
+        "k=3": {
+          "bm25_only": 2,
+          "both_hit": 4,
+          "both_miss": 0,
+          "dense_only": 0
+        },
+        "k=5": {
+          "bm25_only": 2,
+          "both_hit": 4,
+          "both_miss": 0,
+          "dense_only": 0
+        }
+      },
+      "leaves_withdrawals": {
+        "k=1": {
+          "bm25_only": 6,
+          "both_hit": 5,
+          "both_miss": 7,
+          "dense_only": 0
+        },
+        "k=10": {
+          "bm25_only": 4,
+          "both_hit": 14,
+          "both_miss": 0,
+          "dense_only": 0
+        },
+        "k=3": {
+          "bm25_only": 10,
+          "both_hit": 7,
+          "both_miss": 1,
+          "dense_only": 0
+        },
+        "k=5": {
+          "bm25_only": 9,
+          "both_hit": 9,
+          "both_miss": 0,
+          "dense_only": 0
+        }
+      },
+      "student_conduct": {
+        "k=1": {
+          "bm25_only": 2,
+          "both_hit": 7,
+          "both_miss": 0,
+          "dense_only": 3
+        },
+        "k=10": {
+          "bm25_only": 0,
+          "both_hit": 12,
+          "both_miss": 0,
+          "dense_only": 0
+        },
+        "k=3": {
+          "bm25_only": 0,
+          "both_hit": 10,
+          "both_miss": 0,
+          "dense_only": 2
+        },
+        "k=5": {
+          "bm25_only": 0,
+          "both_hit": 12,
+          "both_miss": 0,
+          "dense_only": 0
+        }
+      }
+    }
+  },
+  "left": "bm25",
+  "overall": {
+    "k=1": {
+      "counts": {
+        "bm25_only": 8,
+        "both_hit": 16,
+        "both_miss": 9,
+        "dense_only": 3
+      },
+      "question_ids": {
+        "bm25_only": [
+          "procedures_002",
+          "procedures_003",
+          "leaves_001",
+          "leaves_003",
+          "voluntary_leave_003",
+          "title_iv_002",
+          "title_iv_003",
+          "title_iv_004"
+        ],
+        "both_hit": [
+          "conduct_001",
+          "conduct_002",
+          "conduct_003",
+          "academic_001",
+          "academic_002",
+          "academic_003",
+          "voluntary_leave_001",
+          "voluntary_leave_002",
+          "conduct_005",
+          "conduct_006",
+          "procedures_004",
+          "procedures_006",
+          "academic_005",
+          "leaves_004",
+          "leaves_005",
+          "voluntary_leave_004"
+        ],
+        "both_miss": [
+          "leaves_002",
+          "title_iv_001",
+          "academic_004",
+          "academic_006",
+          "leaves_006",
+          "voluntary_leave_005",
+          "voluntary_leave_006",
+          "title_iv_005",
+          "title_iv_006"
+        ],
+        "dense_only": [
+          "procedures_001",
+          "conduct_004",
+          "procedures_005"
+        ]
+      }
+    },
+    "k=10": {
+      "counts": {
+        "bm25_only": 5,
+        "both_hit": 31,
+        "both_miss": 0,
+        "dense_only": 0
+      },
+      "question_ids": {
+        "bm25_only": [
+          "leaves_003",
+          "title_iv_002",
+          "academic_006",
+          "title_iv_005",
+          "title_iv_006"
+        ],
+        "both_hit": [
+          "conduct_001",
+          "conduct_002",
+          "conduct_003",
+          "procedures_001",
+          "procedures_002",
+          "procedures_003",
+          "academic_001",
+          "academic_002",
+          "academic_003",
+          "leaves_001",
+          "leaves_002",
+          "voluntary_leave_001",
+          "voluntary_leave_002",
+          "voluntary_leave_003",
+          "title_iv_001",
+          "title_iv_003",
+          "conduct_004",
+          "conduct_005",
+          "conduct_006",
+          "procedures_004",
+          "procedures_005",
+          "procedures_006",
+          "academic_004",
+          "academic_005",
+          "leaves_004",
+          "leaves_005",
+          "leaves_006",
+          "voluntary_leave_004",
+          "voluntary_leave_005",
+          "voluntary_leave_006",
+          "title_iv_004"
+        ],
+        "both_miss": [],
+        "dense_only": []
+      }
+    },
+    "k=3": {
+      "counts": {
+        "bm25_only": 12,
+        "both_hit": 21,
+        "both_miss": 1,
+        "dense_only": 2
+      },
+      "question_ids": {
+        "bm25_only": [
+          "leaves_001",
+          "leaves_002",
+          "leaves_003",
+          "voluntary_leave_003",
+          "title_iv_002",
+          "title_iv_003",
+          "academic_004",
+          "academic_006",
+          "leaves_006",
+          "voluntary_leave_006",
+          "title_iv_004",
+          "title_iv_005"
+        ],
+        "both_hit": [
+          "conduct_001",
+          "conduct_002",
+          "conduct_003",
+          "procedures_002",
+          "procedures_003",
+          "academic_001",
+          "academic_002",
+          "academic_003",
+          "voluntary_leave_001",
+          "voluntary_leave_002",
+          "title_iv_001",
+          "conduct_005",
+          "conduct_006",
+          "procedures_004",
+          "procedures_005",
+          "procedures_006",
+          "academic_005",
+          "leaves_004",
+          "leaves_005",
+          "voluntary_leave_004",
+          "voluntary_leave_005"
+        ],
+        "both_miss": [
+          "title_iv_006"
+        ],
+        "dense_only": [
+          "procedures_001",
+          "conduct_004"
+        ]
+      }
+    },
+    "k=5": {
+      "counts": {
+        "bm25_only": 11,
+        "both_hit": 25,
+        "both_miss": 0,
+        "dense_only": 0
+      },
+      "question_ids": {
+        "bm25_only": [
+          "leaves_001",
+          "leaves_002",
+          "leaves_003",
+          "title_iv_002",
+          "title_iv_003",
+          "academic_004",
+          "academic_006",
+          "leaves_006",
+          "title_iv_004",
+          "title_iv_005",
+          "title_iv_006"
+        ],
+        "both_hit": [
+          "conduct_001",
+          "conduct_002",
+          "conduct_003",
+          "procedures_001",
+          "procedures_002",
+          "procedures_003",
+          "academic_001",
+          "academic_002",
+          "academic_003",
+          "voluntary_leave_001",
+          "voluntary_leave_002",
+          "voluntary_leave_003",
+          "title_iv_001",
+          "conduct_004",
+          "conduct_005",
+          "conduct_006",
+          "procedures_004",
+          "procedures_005",
+          "procedures_006",
+          "academic_005",
+          "leaves_004",
+          "leaves_005",
+          "voluntary_leave_004",
+          "voluntary_leave_005",
+          "voluntary_leave_006"
+        ],
+        "both_miss": [],
+        "dense_only": []
+      }
+    }
+  },
+  "per_question": [
+    {
+      "bm25_rank": 1,
+      "bm25_top_chunk": "student_code_of_conduct__0005",
+      "dense_rank": 1,
+      "dense_top_chunk": "student_code_of_conduct__0005",
+      "difficulty": "medium",
+      "question": "Does the Student Code apply to online behavior?",
+      "question_id": "conduct_001",
+      "question_type": "paraphrase",
+      "topic": "student_conduct"
+    },
+    {
+      "bm25_rank": 1,
+      "bm25_top_chunk": "student_code_of_conduct__0019",
+      "dense_rank": 1,
+      "dense_top_chunk": "student_code_of_conduct__0019",
+      "difficulty": "easy",
+      "question": "Can hazing under the Student Code happen off campus or virtually?",
+      "question_id": "conduct_002",
+      "question_type": "keyword",
+      "topic": "student_conduct"
+    },
+    {
+      "bm25_rank": 1,
+      "bm25_top_chunk": "student_code_of_conduct__0009",
+      "dense_rank": 1,
+      "dense_top_chunk": "student_code_of_conduct__0009",
+      "difficulty": "easy",
+      "question": "What does the Student Code say about possessing alcohol while under the legal drinking age?",
+      "question_id": "conduct_003",
+      "question_type": "keyword",
+      "topic": "student_conduct"
+    },
+    {
+      "bm25_rank": 4,
+      "bm25_top_chunk": "student_code_of_conduct_procedures__0006",
+      "dense_rank": 1,
+      "dense_top_chunk": "student_code_of_conduct_procedures__0008",
+      "difficulty": "easy",
+      "question": "How many people are on a University Hearing Panel under the Student Code procedures?",
+      "question_id": "procedures_001",
+      "question_type": "procedure",
+      "topic": "student_conduct"
+    },
+    {
+      "bm25_rank": 1,
+      "bm25_top_chunk": "student_code_of_conduct_procedures__0009",
+      "dense_rank": 3,
+      "dense_top_chunk": "student_code_of_conduct_procedures__0061",
+      "difficulty": "easy",
+      "question": "Who hears appeals under the Student Code procedures?",
+      "question_id": "procedures_002",
+      "question_type": "procedure",
+      "topic": "student_conduct"
+    },
+    {
+      "bm25_rank": 1,
+      "bm25_top_chunk": "student_code_of_conduct_procedures__0061",
+      "dense_rank": 2,
+      "dense_top_chunk": "student_code_of_conduct_procedures__0062",
+      "difficulty": "medium",
+      "question": "How long does a party have to appeal a Student Code Hearing Panel decision?",
+      "question_id": "procedures_003",
+      "question_type": "deadline",
+      "topic": "student_conduct"
+    },
+    {
+      "bm25_rank": 1,
+      "bm25_top_chunk": "code_of_academic_integrity__0000",
+      "dense_rank": 1,
+      "dense_top_chunk": "code_of_academic_integrity__0000",
+      "difficulty": "medium",
+      "question": "What does Cornell's academic integrity code say students should do with outside assistance?",
+      "question_id": "academic_001",
+      "question_type": "paraphrase",
+      "topic": "academic_integrity"
+    },
+    {
+      "bm25_rank": 1,
+      "bm25_top_chunk": "code_of_academic_integrity__0002",
+      "dense_rank": 1,
+      "dense_top_chunk": "code_of_academic_integrity__0002",
+      "difficulty": "easy",
+      "question": "Is unauthorized assistance on an exam listed as an academic integrity violation?",
+      "question_id": "academic_002",
+      "question_type": "keyword",
+      "topic": "academic_integrity"
+    },
+    {
+      "bm25_rank": 1,
+      "bm25_top_chunk": "code_of_academic_integrity__0010",
+      "dense_rank": 1,
+      "dense_top_chunk": "code_of_academic_integrity__0010",
+      "difficulty": "medium",
+      "question": "How much notice does a student get for a primary hearing under the Code of Academic Integrity?",
+      "question_id": "academic_003",
+      "question_type": "deadline",
+      "topic": "academic_integrity"
+    },
+    {
+      "bm25_rank": 1,
+      "bm25_top_chunk": "leaves_and_withdrawals__0000",
+      "dense_rank": 10,
+      "dense_top_chunk": "voluntary_leave_absence_students__0000",
+      "difficulty": "easy",
+      "question": "Can students on a leave of absence enroll in Cornell courses during the leave?",
+      "question_id": "leaves_001",
+      "question_type": "keyword",
+      "topic": "leaves_withdrawals"
+    },
+    {
+      "bm25_rank": 2,
+      "bm25_top_chunk": "title_iv_enrollment_status_reporting__0024",
+      "dense_rank": 10,
+      "dense_top_chunk": "title_iv_enrollment_status_reporting__0010",
+      "difficulty": "medium",
+      "question": "What is one example of an unofficial withdrawal in Cornell's Leaves and Withdrawals page?",
+      "question_id": "leaves_002",
+      "question_type": "paraphrase",
+      "topic": "leaves_withdrawals"
+    },
+    {
+      "bm25_rank": 1,
+      "bm25_top_chunk": "leaves_and_withdrawals__0001",
+      "dense_rank": null,
+      "dense_top_chunk": "voluntary_leave_absence_students__0001",
+      "difficulty": "hard",
+      "question": "What are the request deadlines for returning from a required or health leave of absence?",
+      "question_id": "leaves_003",
+      "question_type": "deadline",
+      "topic": "leaves_withdrawals"
+    },
+    {
+      "bm25_rank": 1,
+      "bm25_top_chunk": "voluntary_leave_absence_students__0001",
+      "dense_rank": 1,
+      "dense_top_chunk": "voluntary_leave_absence_students__0001",
+      "difficulty": "medium",
+      "question": "When may a student request a Health Leave of Absence?",
+      "question_id": "voluntary_leave_001",
+      "question_type": "acronym",
+      "topic": "leaves_withdrawals"
+    },
+    {
+      "bm25_rank": 1,
+      "bm25_top_chunk": "voluntary_leave_absence_students__0002",
+      "dense_rank": 1,
+      "dense_top_chunk": "voluntary_leave_absence_students__0002",
+      "difficulty": "medium",
+      "question": "What is the deadline to request an HLOA for the current term?",
+      "question_id": "voluntary_leave_002",
+      "question_type": "deadline",
+      "topic": "leaves_withdrawals"
+    },
+    {
+      "bm25_rank": 1,
+      "bm25_top_chunk": "voluntary_leave_absence_students__0005",
+      "dense_rank": 4,
+      "dense_top_chunk": "voluntary_leave_absence_students__0001",
+      "difficulty": "medium",
+      "question": "What kind of reasons can support a Personal Leave of Absence?",
+      "question_id": "voluntary_leave_003",
+      "question_type": "paraphrase",
+      "topic": "leaves_withdrawals"
+    },
+    {
+      "bm25_rank": 3,
+      "bm25_top_chunk": "title_iv_enrollment_status_reporting__0007",
+      "dense_rank": 3,
+      "dense_top_chunk": "title_iv_enrollment_status_reporting__0000",
+      "difficulty": "medium",
+      "question": "Which students does Cornell's Title IV enrollment-status reporting policy apply to?",
+      "question_id": "title_iv_001",
+      "question_type": "paraphrase",
+      "topic": "leaves_withdrawals"
+    },
+    {
+      "bm25_rank": 1,
+      "bm25_top_chunk": "title_iv_enrollment_status_reporting__0009",
+      "dense_rank": null,
+      "dense_top_chunk": "title_iv_enrollment_status_reporting__0002",
+      "difficulty": "medium",
+      "question": "What student enrollment statuses does Cornell recognize under Policy 7.3?",
+      "question_id": "title_iv_002",
+      "question_type": "definition",
+      "topic": "leaves_withdrawals"
+    },
+    {
+      "bm25_rank": 1,
+      "bm25_top_chunk": "title_iv_enrollment_status_reporting__0025",
+      "dense_rank": 9,
+      "dense_top_chunk": "title_iv_enrollment_status_reporting__0011",
+      "difficulty": "hard",
+      "question": "Who reports student withdrawals and leaves to NSLDS, and within how many days?",
+      "question_id": "title_iv_003",
+      "question_type": "deadline",
+      "topic": "leaves_withdrawals"
+    },
+    {
+      "bm25_rank": 5,
+      "bm25_top_chunk": "student_code_of_conduct_procedures__0057",
+      "dense_rank": 1,
+      "dense_top_chunk": "student_code_of_conduct__0003",
+      "difficulty": "medium",
+      "question": "What does campus include under the Student Code?",
+      "question_id": "conduct_004",
+      "question_type": "definition",
+      "topic": "student_conduct"
+    },
+    {
+      "bm25_rank": 1,
+      "bm25_top_chunk": "student_code_of_conduct__0011",
+      "dense_rank": 1,
+      "dense_top_chunk": "student_code_of_conduct__0011",
+      "difficulty": "easy",
+      "question": "What counts as bribery under the Student Code?",
+      "question_id": "conduct_005",
+      "question_type": "keyword",
+      "topic": "student_conduct"
+    },
+    {
+      "bm25_rank": 1,
+      "bm25_top_chunk": "student_code_of_conduct__0029",
+      "dense_rank": 1,
+      "dense_top_chunk": "student_code_of_conduct__0029",
+      "difficulty": "medium",
+      "question": "What kinds of objects are included in the Student Code's weapons rule?",
+      "question_id": "conduct_006",
+      "question_type": "paraphrase",
+      "topic": "student_conduct"
+    },
+    {
+      "bm25_rank": 1,
+      "bm25_top_chunk": "student_code_of_conduct_procedures__0022",
+      "dense_rank": 1,
+      "dense_top_chunk": "student_code_of_conduct_procedures__0022",
+      "difficulty": "medium",
+      "question": "What notice do parties receive when a formal conduct complaint starts an investigation?",
+      "question_id": "procedures_004",
+      "question_type": "procedure",
+      "topic": "student_conduct"
+    },
+    {
+      "bm25_rank": 2,
+      "bm25_top_chunk": "code_of_academic_integrity__0013",
+      "dense_rank": 1,
+      "dense_top_chunk": "student_code_of_conduct_procedures__0046",
+      "difficulty": "medium",
+      "question": "How much advance notice should parties get before a Student Code hearing?",
+      "question_id": "procedures_005",
+      "question_type": "deadline",
+      "topic": "student_conduct"
+    },
+    {
+      "bm25_rank": 1,
+      "bm25_top_chunk": "student_code_of_conduct_procedures__0062",
+      "dense_rank": 1,
+      "dense_top_chunk": "student_code_of_conduct_procedures__0062",
+      "difficulty": "medium",
+      "question": "What is the word limit for a Student Code appeal statement?",
+      "question_id": "procedures_006",
+      "question_type": "deadline",
+      "topic": "student_conduct"
+    },
+    {
+      "bm25_rank": 3,
+      "bm25_top_chunk": "code_of_academic_integrity__0004",
+      "dense_rank": 6,
+      "dense_top_chunk": "code_of_academic_integrity__0004",
+      "difficulty": "medium",
+      "question": "Can students record lectures without asking the instructor first?",
+      "question_id": "academic_004",
+      "question_type": "paraphrase",
+      "topic": "academic_integrity"
+    },
+    {
+      "bm25_rank": 1,
+      "bm25_top_chunk": "code_of_academic_integrity__0009",
+      "dense_rank": 1,
+      "dense_top_chunk": "code_of_academic_integrity__0009",
+      "difficulty": "easy",
+      "question": "Where should an apparent academic integrity violation be reported?",
+      "question_id": "academic_005",
+      "question_type": "procedure",
+      "topic": "academic_integrity"
+    },
+    {
+      "bm25_rank": 2,
+      "bm25_top_chunk": "code_of_academic_integrity__0012",
+      "dense_rank": null,
+      "dense_top_chunk": "code_of_academic_integrity__0008",
+      "difficulty": "medium",
+      "question": "What grade penalty can a faculty member impose after finding an academic integrity violation?",
+      "question_id": "academic_006",
+      "question_type": "procedure",
+      "topic": "academic_integrity"
+    },
+    {
+      "bm25_rank": 1,
+      "bm25_top_chunk": "leaves_and_withdrawals__0000",
+      "dense_rank": 1,
+      "dense_top_chunk": "leaves_and_withdrawals__0000",
+      "difficulty": "easy",
+      "question": "Are students on leave eligible for housing, dining, library, or transportation services?",
+      "question_id": "leaves_004",
+      "question_type": "paraphrase",
+      "topic": "leaves_withdrawals"
+    },
+    {
+      "bm25_rank": 1,
+      "bm25_top_chunk": "leaves_and_withdrawals__0001",
+      "dense_rank": 1,
+      "dense_top_chunk": "leaves_and_withdrawals__0001",
+      "difficulty": "medium",
+      "question": "What can happen to federal Title IV aid when a Cornell student withdraws or takes leave?",
+      "question_id": "leaves_005",
+      "question_type": "paraphrase",
+      "topic": "leaves_withdrawals"
+    },
+    {
+      "bm25_rank": 2,
+      "bm25_top_chunk": "title_iv_enrollment_status_reporting__0024",
+      "dense_rank": 8,
+      "dense_top_chunk": "title_iv_enrollment_status_reporting__0024",
+      "difficulty": "easy",
+      "question": "What if a student drops all classes but does not notify their college?",
+      "question_id": "leaves_006",
+      "question_type": "paraphrase",
+      "topic": "leaves_withdrawals"
+    },
+    {
+      "bm25_rank": 1,
+      "bm25_top_chunk": "voluntary_leave_absence_students__0000",
+      "dense_rank": 1,
+      "dense_top_chunk": "voluntary_leave_absence_students__0000",
+      "difficulty": "medium",
+      "question": "Can an admitted Cornell applicant take a leave of absence before starting attendance?",
+      "question_id": "voluntary_leave_004",
+      "question_type": "paraphrase",
+      "topic": "leaves_withdrawals"
+    },
+    {
+      "bm25_rank": 2,
+      "bm25_top_chunk": "leaves_and_withdrawals__0001",
+      "dense_rank": 3,
+      "dense_top_chunk": "voluntary_leave_absence_students__0003",
+      "difficulty": "medium",
+      "question": "Can a student return from an HLOA in the same semester they took it?",
+      "question_id": "voluntary_leave_005",
+      "question_type": "acronym",
+      "topic": "leaves_withdrawals"
+    },
+    {
+      "bm25_rank": 2,
+      "bm25_top_chunk": "voluntary_leave_absence_students__0006",
+      "dense_rank": 5,
+      "dense_top_chunk": "voluntary_leave_absence_students__0006",
+      "difficulty": "medium",
+      "question": "What is a student's registration status while on a PLOA?",
+      "question_id": "voluntary_leave_006",
+      "question_type": "acronym",
+      "topic": "leaves_withdrawals"
+    },
+    {
+      "bm25_rank": 1,
+      "bm25_top_chunk": "title_iv_enrollment_status_reporting__0011",
+      "dense_rank": 6,
+      "dense_top_chunk": "leaves_and_withdrawals__0000",
+      "difficulty": "medium",
+      "question": "Can official notification of withdrawal be oral under Policy 7.3?",
+      "question_id": "title_iv_004",
+      "question_type": "definition",
+      "topic": "leaves_withdrawals"
+    },
+    {
+      "bm25_rank": 2,
+      "bm25_top_chunk": "title_iv_enrollment_status_reporting__0017",
+      "dense_rank": null,
+      "dense_top_chunk": "title_iv_enrollment_status_reporting__0017",
+      "difficulty": "hard",
+      "question": "How quickly must Cornell correct NSLDS enrollment data errors?",
+      "question_id": "title_iv_005",
+      "question_type": "acronym",
+      "topic": "leaves_withdrawals"
+    },
+    {
+      "bm25_rank": 4,
+      "bm25_top_chunk": "title_iv_enrollment_status_reporting__0022",
+      "dense_rank": null,
+      "dense_top_chunk": "title_iv_enrollment_status_reporting__0022",
+      "difficulty": "hard",
+      "question": "Is a student's own statement enough to confirm their last day of attendance?",
+      "question_id": "title_iv_006",
+      "question_type": "paraphrase",
+      "topic": "leaves_withdrawals"
+    }
+  ],
+  "right": "dense"
+}

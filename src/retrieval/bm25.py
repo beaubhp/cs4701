@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Any
 
 from src.corpus.schema import read_jsonl
+from src.retrieval.base import SearchResult
 from src.retrieval.tokenize import expand_query_text, tokenize
 
 
@@ -14,18 +15,6 @@ TITLE_WEIGHT = 2
 SECTION_WEIGHT = 3
 TOPIC_WEIGHT = 1
 BODY_WEIGHT = 1
-
-
-@dataclass(frozen=True)
-class SearchResult:
-    chunk_id: str
-    doc_id: str
-    section: str | None
-    score: float
-    title: str
-    text: str
-    chunk_index: int
-
 
 @dataclass(frozen=True)
 class IndexedChunk:
@@ -76,6 +65,15 @@ class BM25Index:
             )
         )
         return [to_search_result(score, indexed) for score, _, indexed in scored[:top_k]]
+
+    def describe(self) -> dict:
+        return {
+            "name": "local_okapi_bm25",
+            "k1": self.k1,
+            "b": self.b,
+            "num_chunks": self.num_docs,
+            "avg_indexed_doc_len": self.avg_doc_len,
+        }
 
     def score_terms(self, query_terms: list[str], indexed: IndexedChunk) -> float:
         if indexed.length == 0 or self.avg_doc_len == 0:
