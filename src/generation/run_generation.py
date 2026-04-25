@@ -10,6 +10,7 @@ from dotenv import load_dotenv
 
 from src.corpus.schema import read_jsonl, write_jsonl
 from src.eval.benchmark import load_questions, validate_benchmark
+from src.generation.iterkey import ITERKEY_PROMPT_VERSION, run_iterkey
 from src.generation.llm import DEFAULT_MODEL, DEFAULT_TEMPERATURE, OpenAIGenerator
 from src.generation.prompts import (
     NON_RAG_PROMPT_VERSION,
@@ -22,7 +23,7 @@ from src.retrieval.bm25 import BM25Index
 from src.retrieval.rerank import DEFAULT_RERANKER_MODEL
 
 
-SYSTEMS = {"non_rag", "bm25_rag", "dense_rag", "bm25_rerank_rag", "dense_rerank_rag"}
+SYSTEMS = {"non_rag", "bm25_rag", "dense_rag", "bm25_rerank_rag", "dense_rerank_rag", "iterkey_rag"}
 
 
 def parse_args() -> argparse.Namespace:
@@ -34,6 +35,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--top-k", type=int, default=5)
     parser.add_argument("--candidate-k", type=int, default=20)
     parser.add_argument("--reranker-model", default=DEFAULT_RERANKER_MODEL)
+    parser.add_argument("--max-iterations", type=int, default=5)
     parser.add_argument("--model", default=DEFAULT_MODEL)
     parser.add_argument("--temperature", type=float, default=DEFAULT_TEMPERATURE)
     parser.add_argument("--limit", type=int)
@@ -51,6 +53,7 @@ def run_generation(
     top_k: int,
     candidate_k: int,
     reranker_model: str,
+    max_iterations: int,
     model: str,
     temperature: float,
     limit: int | None = None,
@@ -71,33 +74,55 @@ def run_generation(
 
     rows = []
     for question in questions:
-        retrieved_results = [] if retriever is None else retriever.search(question["question"], top_k=top_k)
-        retrieved_chunks = [chunks_by_id[result.chunk_id] for result in retrieved_results]
-
-        if system == "non_rag":
-            instructions, user_input = build_non_rag_prompt(question)
-            prompt_version = NON_RAG_PROMPT_VERSION
-        else:
-            instructions, user_input = build_rag_prompt(question, retrieved_chunks)
-            prompt_version = RAG_PROMPT_VERSION
-
-        if dry_run:
-            parsed = {
-                "answer": "",
-                "abstained": True,
-                "abstention_reason": "dry_run",
-                "citations": [],
-            }
+        iterkey_trace = None
+        if system == "iterkey_rag" and not dry_run:
+            assert generator is not None
+            assert isinstance(retriever, BM25Index)
+            parsed, retrieved_results, iterkey_trace = run_iterkey(
+                question=question,
+                retriever=retriever,
+                chunks_by_id=chunks_by_id,
+                generator=generator,
+                top_k=top_k,
+                max_iterations=max_iterations,
+            )
+            prompt_version = ITERKEY_PROMPT_VERSION
             raw_response = None
             request_id = None
             usage = None
+        elif system == "non_rag":
+            retrieved_results = []
+            instructions, user_input = build_non_rag_prompt(question)
+            prompt_version = NON_RAG_PROMPT_VERSION
+            if dry_run:
+                parsed = dry_run_response()
+                raw_response = None
+                request_id = None
+                usage = None
+            else:
+                assert generator is not None
+                result = generator.generate_structured(instructions, user_input)
+                parsed = result.parsed
+                raw_response = result.raw_response
+                request_id = result.request_id
+                usage = result.usage
         else:
-            assert generator is not None
-            result = generator.generate_structured(instructions, user_input)
-            parsed = result.parsed
-            raw_response = result.raw_response
-            request_id = result.request_id
-            usage = result.usage
+            retrieved_results = [] if retriever is None else retriever.search(question["question"], top_k=top_k)
+            retrieved_chunks = [chunks_by_id[result.chunk_id] for result in retrieved_results]
+            instructions, user_input = build_rag_prompt(question, retrieved_chunks)
+            prompt_version = ITERKEY_PROMPT_VERSION if system == "iterkey_rag" else RAG_PROMPT_VERSION
+            if dry_run:
+                parsed = dry_run_response()
+                raw_response = None
+                request_id = None
+                usage = None
+            else:
+                assert generator is not None
+                result = generator.generate_structured(instructions, user_input)
+                parsed = result.parsed
+                raw_response = result.raw_response
+                request_id = result.request_id
+                usage = result.usage
 
         rows.append(
             generation_row(
@@ -113,6 +138,7 @@ def run_generation(
                 usage=usage,
                 dry_run=dry_run,
                 include_raw_response=include_raw_response,
+                iterkey_trace=iterkey_trace,
             )
         )
 
@@ -137,9 +163,20 @@ def select_questions(
     return questions
 
 
+def dry_run_response() -> dict[str, Any]:
+    return {
+        "answer": "",
+        "abstained": True,
+        "abstention_reason": "dry_run",
+        "citations": [],
+    }
+
+
 def build_retriever(system: str, chunks_path: Path, candidate_k: int, reranker_model: str):
     if system == "non_rag":
         return None
+    if system == "iterkey_rag":
+        return BM25Index.from_jsonl(chunks_path)
     if system == "bm25_rag":
         return BM25Index.from_jsonl(chunks_path)
     if system == "dense_rag":
@@ -178,6 +215,7 @@ def generation_row(
     usage: dict[str, Any] | None,
     dry_run: bool,
     include_raw_response: bool,
+    iterkey_trace: list[dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     return {
         "question_id": question["question_id"],
@@ -196,6 +234,7 @@ def generation_row(
         "usage": usage,
         "dry_run": dry_run,
         "raw_response": raw_response if include_raw_response else None,
+        "iterkey_trace": iterkey_trace,
     }
 
 
@@ -225,6 +264,7 @@ def main() -> None:
         top_k=args.top_k,
         candidate_k=args.candidate_k,
         reranker_model=args.reranker_model,
+        max_iterations=args.max_iterations,
         model=args.model,
         temperature=args.temperature,
         limit=args.limit,

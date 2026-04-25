@@ -44,16 +44,32 @@ class OpenAIGenerator:
         self.temperature = temperature
 
     def generate_structured(self, instructions: str, user_input: str, max_retries: int = 3) -> LLMResult:
+        return self.generate_with_schema(
+            instructions=instructions,
+            user_input=user_input,
+            schema=ANSWER_SCHEMA,
+            schema_name="policy_answer",
+            max_retries=max_retries,
+        )
+
+    def generate_with_schema(
+        self,
+        instructions: str,
+        user_input: str,
+        schema: dict[str, Any],
+        schema_name: str,
+        max_retries: int = 3,
+    ) -> LLMResult:
         last_error: Exception | None = None
         for attempt in range(max_retries):
             try:
-                response = self.client.responses.create(**self._request_args(instructions, user_input))
+                response = self.client.responses.create(**self._request_args(instructions, user_input, schema, schema_name))
                 return parse_response(response)
             except BadRequestError as error:
                 if "temperature" not in str(error).lower():
                     raise
                 response = self.client.responses.create(
-                    **self._request_args(instructions, user_input, include_temperature=False)
+                    **self._request_args(instructions, user_input, schema, schema_name, include_temperature=False)
                 )
                 return parse_response(response)
             except (RateLimitError, APIError) as error:
@@ -69,6 +85,8 @@ class OpenAIGenerator:
         self,
         instructions: str,
         user_input: str,
+        schema: dict[str, Any],
+        schema_name: str,
         include_temperature: bool = True,
     ) -> dict[str, Any]:
         args: dict[str, Any] = {
@@ -78,9 +96,9 @@ class OpenAIGenerator:
             "text": {
                 "format": {
                     "type": "json_schema",
-                    "name": "policy_answer",
+                    "name": schema_name,
                     "strict": True,
-                    "schema": ANSWER_SCHEMA,
+                    "schema": schema,
                 }
             },
         }

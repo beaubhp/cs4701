@@ -1,0 +1,22 @@
+{
+  "abstention_rate": 0.25,
+  "answer_rate": 0.75,
+  "answerable": {
+    "answered_rate": 0.96,
+    "gold_citation_hit_rate": 0.84,
+    "num_questions": 75,
+    "over_abstention_rate": 0.04
+  },
+  "citations": {
+    "avg_citation_count": 1.88,
+    "citation_in_retrieved_rate": 1.0,
+    "citation_validity_rate": 1.0
+  },
+  "num_generations": 100,
+  "system": "iterkey_rag",
+  "unanswerable": {
+    "correct_abstention_rate": 0.88,
+    "false_answer_rate": 0.12,
+    "num_questions": 25
+  }
+}

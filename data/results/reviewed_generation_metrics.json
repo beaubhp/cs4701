@@ -274,6 +274,80 @@
       "reviewed_hallucination_rate": 0.04
     }
   },
+  "iterkey_rag": {
+    "answerable": {
+      "num_questions": 75,
+      "reviewed_accuracy": 0.92,
+      "reviewed_hallucination_rate": 0.0,
+      "reviewed_over_abstention_rate": 0.04
+    },
+    "citations": {
+      "num_applicable_rows": 100,
+      "reviewed_citation_support_rate": 0.99
+    },
+    "flagged_rows": [
+      {
+        "manual_citation_supported": true,
+        "manual_correct": false,
+        "manual_hallucinated": false,
+        "manual_notes": "Over-abstention/retrieval miss: the corpus answers this directly, but IterKey retrieved hearing-chair/sanction chunks instead of the five-person panel chunk.",
+        "question_id": "procedures_001"
+      },
+      {
+        "manual_citation_supported": true,
+        "manual_correct": false,
+        "manual_hallucinated": false,
+        "manual_notes": "Over-abstention/retrieval miss: the corpus defines bribery directly, but IterKey retrieved an obstruction-process chunk instead.",
+        "question_id": "conduct_005"
+      },
+      {
+        "manual_citation_supported": true,
+        "manual_correct": false,
+        "manual_hallucinated": false,
+        "manual_notes": "Incorrect/retrieval miss: the answer says the retrieved evidence does not state the hearing notice period, but the benchmark chunk states at least ten business days.",
+        "question_id": "procedures_005"
+      },
+      {
+        "manual_citation_supported": true,
+        "manual_correct": false,
+        "manual_hallucinated": false,
+        "manual_notes": "Incorrect: the answer uses primary-hearing faculty authority, but the benchmark evidence assigns authority to determine Code violations to the Academic Integrity Hearing Board.",
+        "question_id": "academic_010"
+      },
+      {
+        "manual_citation_supported": true,
+        "manual_correct": false,
+        "manual_hallucinated": false,
+        "manual_notes": "Over-abstention: retrieved chunks include the primary-hearing composition, but the system returned an empty abstention.",
+        "question_id": "academic_011"
+      },
+      {
+        "manual_citation_supported": true,
+        "manual_correct": false,
+        "manual_hallucinated": false,
+        "manual_notes": "Incomplete/retrieval miss: the answer includes Ithaca-based locations and Cornell Tech, but omits Weill Cornell Medicine campuses from the benchmark evidence.",
+        "question_id": "title_iv_008"
+      },
+      {
+        "manual_citation_supported": false,
+        "manual_correct": false,
+        "manual_hallucinated": true,
+        "manual_notes": "Unsupported answer: the response conflates investigative interview recording and hearing-record audio language with the question of whether hearings are always video recorded.",
+        "question_id": "unanswerable_023"
+      }
+    ],
+    "major_hallucination_rate": 0.0,
+    "num_reviewed": 100,
+    "reviewed_correct_rate": 0.93,
+    "reviewed_hallucination_rate": 0.01,
+    "system": "iterkey_rag",
+    "unanswerable": {
+      "num_questions": 25,
+      "reviewed_correct_refusal_rate": 0.96,
+      "reviewed_false_answer_rate": 0.04,
+      "reviewed_hallucination_rate": 0.04
+    }
+  },
   "non_rag": {
     "answerable": {
       "num_questions": 75,
