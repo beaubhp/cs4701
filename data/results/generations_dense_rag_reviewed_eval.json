@@ -1,13 +1,13 @@
 {
   "answerable": {
-    "num_questions": 36,
-    "reviewed_accuracy": 0.8888888888888888,
+    "num_questions": 75,
+    "reviewed_accuracy": 0.8666666666666667,
     "reviewed_hallucination_rate": 0.0,
-    "reviewed_over_abstention_rate": 0.05555555555555555
+    "reviewed_over_abstention_rate": 0.08
   },
   "citations": {
-    "num_applicable_rows": 48,
-    "reviewed_citation_support_rate": 0.9583333333333334
+    "num_applicable_rows": 100,
+    "reviewed_citation_support_rate": 0.92
   },
   "flagged_rows": [
     {
@@ -51,15 +51,57 @@
       "manual_hallucinated": false,
       "manual_notes": "Correctly avoids giving a gym-membership refund rule, but the cited chunks do not support the added advice to contact the Office of the Bursar or a college/unit administrative office for this specific gym refund question.",
       "question_id": "unanswerable_010"
+    },
+    {
+      "manual_citation_supported": false,
+      "manual_correct": false,
+      "manual_hallucinated": false,
+      "manual_notes": "Incorrect/retrieval miss: the answer gives the five-person panel size, not the benchmark-supported Hearing and Review Board composition of at least 25 students, 15 faculty, and 15 nonfaculty employees.",
+      "question_id": "procedures_009"
+    },
+    {
+      "manual_citation_supported": false,
+      "manual_correct": false,
+      "manual_hallucinated": false,
+      "manual_notes": "Over-abstention/retrieval miss: the corpus says reports should be made as soon as possible, preferably within one year, but the retrieved evidence did not surface that rule.",
+      "question_id": "procedures_011"
+    },
+    {
+      "manual_citation_supported": false,
+      "manual_correct": false,
+      "manual_hallucinated": false,
+      "manual_notes": "Incorrect/retrieval miss: the answer gives a different rationale about college conditions and planning, not the benchmark rationale that deadlines inform return decisions and allow processing and academic planning.",
+      "question_id": "leaves_011"
+    },
+    {
+      "manual_citation_supported": false,
+      "manual_correct": false,
+      "manual_hallucinated": false,
+      "manual_notes": "Over-abstention/retrieval miss: the corpus says students requesting return by the listed dates enroll during the add period, but the retrieved evidence did not surface that fact.",
+      "question_id": "leaves_012"
+    },
+    {
+      "manual_citation_supported": false,
+      "manual_correct": false,
+      "manual_hallucinated": false,
+      "manual_notes": "Over-abstention/retrieval miss: Policy 7.1 states that academic faculty or staff should not request health information directly from the student, but the retrieved evidence did not surface it.",
+      "question_id": "voluntary_leave_013"
+    },
+    {
+      "manual_citation_supported": false,
+      "manual_correct": false,
+      "manual_hallucinated": false,
+      "manual_notes": "Over-abstention/retrieval miss: Policy 7.3 gives the general-contact answer, but the retrieved evidence was from unrelated conduct documents.",
+      "question_id": "title_iv_009"
     }
   ],
   "major_hallucination_rate": 0.0,
-  "num_reviewed": 48,
-  "reviewed_correct_rate": 0.9166666666666666,
+  "num_reviewed": 100,
+  "reviewed_correct_rate": 0.9,
   "reviewed_hallucination_rate": 0.0,
   "system": "dense_rag",
   "unanswerable": {
-    "num_questions": 12,
+    "num_questions": 25,
     "reviewed_correct_refusal_rate": 1.0,
     "reviewed_false_answer_rate": 0.0,
     "reviewed_hallucination_rate": 0.0

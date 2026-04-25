@@ -1,13 +1,13 @@
 {
   "answerable": {
-    "num_questions": 36,
-    "reviewed_accuracy": 0.9444444444444444,
-    "reviewed_hallucination_rate": 0.027777777777777776,
+    "num_questions": 75,
+    "reviewed_accuracy": 0.96,
+    "reviewed_hallucination_rate": 0.013333333333333334,
     "reviewed_over_abstention_rate": 0.0
   },
   "citations": {
-    "num_applicable_rows": 48,
-    "reviewed_citation_support_rate": 0.9791666666666666
+    "num_applicable_rows": 100,
+    "reviewed_citation_support_rate": 0.98
   },
   "flagged_rows": [
     {
@@ -23,17 +23,31 @@
       "manual_hallucinated": true,
       "manual_notes": "Cross-policy conflation: the Student Code hearing notice answer correctly gives ten business days, but it misleadingly adds a seven-day Academic Integrity Hearing Board notice rule as if it applied to the Student Code hearing question.",
       "question_id": "procedures_005"
+    },
+    {
+      "manual_citation_supported": true,
+      "manual_correct": false,
+      "manual_hallucinated": false,
+      "manual_notes": "Incomplete/retrieval miss: the answer discusses Ithaca-based locations and Cornell Tech but misses the benchmark-supported Weill Cornell Medicine campuses.",
+      "question_id": "title_iv_008"
+    },
+    {
+      "manual_citation_supported": false,
+      "manual_correct": false,
+      "manual_hallucinated": true,
+      "manual_notes": "Unsupported answer: the cited evidence requires a signed written Formal Complaint but does not establish a general rule that anonymous Formal Complaints cannot be filed.",
+      "question_id": "unanswerable_015"
     }
   ],
-  "major_hallucination_rate": 0.020833333333333332,
-  "num_reviewed": 48,
-  "reviewed_correct_rate": 0.9583333333333334,
-  "reviewed_hallucination_rate": 0.020833333333333332,
+  "major_hallucination_rate": 0.02,
+  "num_reviewed": 100,
+  "reviewed_correct_rate": 0.96,
+  "reviewed_hallucination_rate": 0.02,
   "system": "bm25_rag",
   "unanswerable": {
-    "num_questions": 12,
-    "reviewed_correct_refusal_rate": 1.0,
-    "reviewed_false_answer_rate": 0.0,
-    "reviewed_hallucination_rate": 0.0
+    "num_questions": 25,
+    "reviewed_correct_refusal_rate": 0.96,
+    "reviewed_false_answer_rate": 0.04,
+    "reviewed_hallucination_rate": 0.04
   }
 }

@@ -1,22 +1,22 @@
 {
-  "abstention_rate": 0.25,
-  "answer_rate": 0.75,
+  "abstention_rate": 0.22,
+  "answer_rate": 0.78,
   "answerable": {
     "answered_rate": 1.0,
-    "gold_citation_hit_rate": 1.0,
-    "num_questions": 36,
+    "gold_citation_hit_rate": 0.9866666666666667,
+    "num_questions": 75,
     "over_abstention_rate": 0.0
   },
   "citations": {
-    "avg_citation_count": 1.8958333333333333,
+    "avg_citation_count": 1.76,
     "citation_in_retrieved_rate": 1.0,
     "citation_validity_rate": 1.0
   },
-  "num_generations": 48,
+  "num_generations": 100,
   "system": "bm25_rag",
   "unanswerable": {
-    "correct_abstention_rate": 1.0,
-    "false_answer_rate": 0.0,
-    "num_questions": 12
+    "correct_abstention_rate": 0.88,
+    "false_answer_rate": 0.12,
+    "num_questions": 25
   }
 }

@@ -1,8 +1,8 @@
 {
   "answerable": {
-    "num_questions": 36,
-    "reviewed_accuracy": 0.5277777777777778,
-    "reviewed_hallucination_rate": 0.5277777777777778,
+    "num_questions": 75,
+    "reviewed_accuracy": 0.5066666666666667,
+    "reviewed_hallucination_rate": 0.48,
     "reviewed_over_abstention_rate": 0.0
   },
   "citations": {
@@ -191,17 +191,241 @@
       "manual_hallucinated": true,
       "manual_notes": "Unsupported answer: the fixed corpus does not provide a universal maximum number of months for every HLOA. No citations were expected for the non-RAG baseline.",
       "question_id": "unanswerable_011"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": false,
+      "manual_hallucinated": false,
+      "manual_notes": "Incomplete: the answer does not give the benchmark-defined earliest commencement-of-attendance triggers. No citations were expected for the non-RAG baseline.",
+      "question_id": "conduct_007"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": false,
+      "manual_hallucinated": true,
+      "manual_notes": "Incorrect/overbroad: the answer adds academic-dishonesty examples and does not stay with the Student Code definition of aiding another person, including a guest, to commit a Code violation. No citations were expected for the non-RAG baseline.",
+      "question_id": "conduct_010"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": false,
+      "manual_hallucinated": true,
+      "manual_notes": "Incorrect for the expression-specific rule: the answer gives a generic hostile-environment test but misses the Code language about expression being abusive/humiliating toward specific persons or persisting despite reasonable objection. No citations were expected for the non-RAG baseline.",
+      "question_id": "conduct_012"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": false,
+      "manual_hallucinated": true,
+      "manual_notes": "Incorrect: the benchmark evidence says the Hearing and Review Board includes at least 25 students, 15 faculty, and 15 nonfaculty employees, not a three-member board. No citations were expected for the non-RAG baseline.",
+      "question_id": "procedures_009"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": false,
+      "manual_hallucinated": false,
+      "manual_notes": "Incomplete: the answer says to report promptly but omits the benchmark-supported preference for reporting within one year. No citations were expected for the non-RAG baseline.",
+      "question_id": "procedures_011"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": false,
+      "manual_hallucinated": true,
+      "manual_notes": "Incorrect: the benchmark evidence gives five business days to review the draft investigative record, not ten business days. No citations were expected for the non-RAG baseline.",
+      "question_id": "procedures_013"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": false,
+      "manual_hallucinated": true,
+      "manual_notes": "Incorrect: the benchmark evidence places authority with the Academic Integrity Hearing Board; the answer shifts authority to the instructor/course or unit process. No citations were expected for the non-RAG baseline.",
+      "question_id": "academic_010"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": false,
+      "manual_hallucinated": true,
+      "manual_notes": "Incorrect: the primary hearing includes the faculty member, student, and a third-party independent witness; the answer replaces this with a hearing officer. No citations were expected for the non-RAG baseline.",
+      "question_id": "academic_011"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": false,
+      "manual_hallucinated": false,
+      "manual_notes": "Incomplete: the answer is a vague description of a board and does not provide the model composition in the benchmark evidence. No citations were expected for the non-RAG baseline.",
+      "question_id": "academic_012"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": true,
+      "manual_hallucinated": true,
+      "manual_notes": "Correct core answer, but adds an unsupported one-year expectation not present in the benchmark evidence. No citations were expected for the non-RAG baseline.",
+      "question_id": "leaves_007"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": false,
+      "manual_hallucinated": true,
+      "manual_notes": "Incorrect: the benchmark evidence says University LOAs are treated as withdrawals for enrollment reporting, while the answer says they are a temporary interruption rather than a withdrawal. No citations were expected for the non-RAG baseline.",
+      "question_id": "leaves_008"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": false,
+      "manual_hallucinated": true,
+      "manual_notes": "Incorrect: the benchmark evidence says Cornell does not process Title IV leaves of absence, but the answer says Cornell does process them. No citations were expected for the non-RAG baseline.",
+      "question_id": "leaves_010"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": true,
+      "manual_hallucinated": true,
+      "manual_notes": "Correct core rationale, but adds unsupported housing, financial aid, and registration coordination details beyond the benchmark evidence. No citations were expected for the non-RAG baseline.",
+      "question_id": "leaves_011"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": false,
+      "manual_hallucinated": false,
+      "manual_notes": "Incomplete/incorrect: the benchmark evidence says students would enroll during the add period, while the answer gives a generic normal enrollment-period description. No citations were expected for the non-RAG baseline.",
+      "question_id": "leaves_012"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": true,
+      "manual_hallucinated": true,
+      "manual_notes": "Correct core answer, but adds unsupported commentary about contract colleges or other campuses. No citations were expected for the non-RAG baseline.",
+      "question_id": "voluntary_leave_007"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": false,
+      "manual_hallucinated": true,
+      "manual_notes": "Incorrect: the benchmark is about student voluntary leave for health or personal reasons, but the answer describes employee leave categories. No citations were expected for the non-RAG baseline.",
+      "question_id": "voluntary_leave_008"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": false,
+      "manual_hallucinated": true,
+      "manual_notes": "Incorrect: the benchmark evidence says the HLOA letter must be provided within two business days, not about one business day. No citations were expected for the non-RAG baseline.",
+      "question_id": "voluntary_leave_010"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": false,
+      "manual_hallucinated": false,
+      "manual_notes": "Incomplete: the answer does not identify the benchmark-supported gradschool.cornell.edu/forms submission path for graduate research degree students. No citations were expected for the non-RAG baseline.",
+      "question_id": "voluntary_leave_011"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": false,
+      "manual_hallucinated": true,
+      "manual_notes": "Incorrect: the benchmark evidence says academic faculty or staff should under no circumstances request health information directly; the answer allows direct requests with a legitimate need or process. No citations were expected for the non-RAG baseline.",
+      "question_id": "voluntary_leave_013"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": false,
+      "manual_hallucinated": false,
+      "manual_notes": "Incomplete: the answer does not name the benchmark-supported covered locations: Ithaca-based locations, Cornell Tech, and Weill Cornell Medicine campuses. No citations were expected for the non-RAG baseline.",
+      "question_id": "title_iv_008"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": false,
+      "manual_hallucinated": true,
+      "manual_notes": "Incorrect: the benchmark evidence says general Policy 7.3 questions go to the college or unit administrative office, not the Office of Institutional Equity and Title IX. No citations were expected for the non-RAG baseline.",
+      "question_id": "title_iv_009"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": false,
+      "manual_hallucinated": true,
+      "manual_notes": "Incorrect: the benchmark evidence uses term end +1 or latest class end date, not simply the future effective date specified by the student. No citations were expected for the non-RAG baseline.",
+      "question_id": "title_iv_010"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": false,
+      "manual_hallucinated": true,
+      "manual_notes": "Incorrect: the benchmark evidence says five business days, not 24 hours. No citations were expected for the non-RAG baseline.",
+      "question_id": "title_iv_012"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": false,
+      "manual_hallucinated": true,
+      "manual_notes": "Unsupported answer: the fixed corpus does not state a general rule that Formal Complaints cannot be anonymous or that anonymous reports are only informal tips. No citations were expected for the non-RAG baseline.",
+      "question_id": "unanswerable_015"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": false,
+      "manual_hallucinated": true,
+      "manual_notes": "Unsupported answer: the fixed corpus does not provide the requested policy detail.",
+      "question_id": "unanswerable_017"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": false,
+      "manual_hallucinated": true,
+      "manual_notes": "Unsupported answer: the fixed corpus does not provide a universal 2.0 GPA threshold for satisfactory academic progress. No citations were expected for the non-RAG baseline.",
+      "question_id": "unanswerable_018"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": false,
+      "manual_hallucinated": true,
+      "manual_notes": "Unsupported answer: the fixed corpus does not assign an automatic or typical educational/probationary sanction for a first underage alcohol possession violation. No citations were expected for the non-RAG baseline.",
+      "question_id": "unanswerable_019"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": false,
+      "manual_hallucinated": true,
+      "manual_notes": "Unsupported answer: the fixed corpus does not provide a 50% seventh-week PLOA tuition refund amount. No citations were expected for the non-RAG baseline.",
+      "question_id": "unanswerable_020"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": false,
+      "manual_hallucinated": true,
+      "manual_notes": "Unsupported answer: the fixed corpus does not provide the requested policy detail.",
+      "question_id": "unanswerable_021"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": false,
+      "manual_hallucinated": true,
+      "manual_notes": "Unsupported answer: the fixed corpus does not provide Cornell\u2019s FAFSA school code for Title IV reporting. No citations were expected for the non-RAG baseline.",
+      "question_id": "unanswerable_022"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": false,
+      "manual_hallucinated": true,
+      "manual_notes": "Unsupported answer: the fixed corpus does not establish a general video-recording rule for Student Code hearings. No citations were expected for the non-RAG baseline.",
+      "question_id": "unanswerable_023"
+    },
+    {
+      "manual_citation_supported": null,
+      "manual_correct": false,
+      "manual_hallucinated": true,
+      "manual_notes": "Unsupported answer: the fixed corpus does not state that students on HLOA keep Cornell email access. No citations were expected for the non-RAG baseline.",
+      "question_id": "unanswerable_025"
     }
   ],
-  "major_hallucination_rate": 0.3958333333333333,
-  "num_reviewed": 48,
-  "reviewed_correct_rate": 0.5208333333333334,
-  "reviewed_hallucination_rate": 0.5208333333333334,
+  "major_hallucination_rate": 0.37,
+  "num_reviewed": 100,
+  "reviewed_correct_rate": 0.48,
+  "reviewed_hallucination_rate": 0.51,
   "system": "non_rag",
   "unanswerable": {
-    "num_questions": 12,
-    "reviewed_correct_refusal_rate": 0.5,
-    "reviewed_false_answer_rate": 0.5,
-    "reviewed_hallucination_rate": 0.5
+    "num_questions": 25,
+    "reviewed_correct_refusal_rate": 0.4,
+    "reviewed_false_answer_rate": 0.6,
+    "reviewed_hallucination_rate": 0.6
   }
 }
