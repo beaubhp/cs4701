@@ -5,3 +5,7 @@ __pycache__/
 .venv/
 venv/
 data/processed/embeddings_*.npz
+node_modules/
+.next/
+out/
+*.tsbuildinfo
