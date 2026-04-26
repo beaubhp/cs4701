@@ -26,14 +26,12 @@ src/eval/                                Benchmark, retrieval, and generation ev
 
 Six official Cornell sources are frozen in `data/sources.yml`:
 
-```text
-student_code_of_conduct
-student_code_of_conduct_procedures
-code_of_academic_integrity
-leaves_and_withdrawals
-voluntary_leave_absence_students
-title_iv_enrollment_status_reporting
-```
+- `student_code_of_conduct` — [Student Code of Conduct (PDF)](https://scl.cornell.edu/sites/scl/files/documents/Cornell%20Student%20Code%20of%20Conduct%20Approved%20by%20the%20Board%2012.10.20%20Final.pdf) ([policy page](https://policy.cornell.edu/policy-library/student-code-conduct))
+- `student_code_of_conduct_procedures` — [Student Code of Conduct Procedures (PDF)](https://scl.cornell.edu/sites/scl/files/documents/Student%20Code%20of%20Conduct%20Procedures%20Approved%20by%20the%20Board%2012.10.20%20Final.pdf) ([catalog page](https://catalog.cornell.edu/policies-disclosures/code-conduct/))
+- `code_of_academic_integrity` — [Code of Academic Integrity](https://www.deanoffaculty.cornell.edu/faculty-and-academic-affairs/academic-integrity/code-of-academic-integrity/)
+- `leaves_and_withdrawals` — [Leaves and Withdrawals (Courses of Study)](https://catalog.cornell.edu/enrollment-credit-requirements/leaves-withdrawals/)
+- `voluntary_leave_absence_students` — [Policy 7.1: Voluntary Leave of Absence for Students (PDF)](https://policy.cornell.edu/sites/default/files/policy/vol7_1.pdf) ([policy page](https://policy.cornell.edu/policy-library/voluntary-leave-absence-students))
+- `title_iv_enrollment_status_reporting` — [Policy 7.3: Processing and Reporting Changes in Student Enrollment Status Under Title IV (PDF)](https://policy.cornell.edu/sites/default/files/policy/vol7_3.pdf) ([policy page](https://policy.cornell.edu/policy-library/processing-and-reporting-changes-student-enrollment-status-under-title-iv))
 
 Current processed corpus:
 
