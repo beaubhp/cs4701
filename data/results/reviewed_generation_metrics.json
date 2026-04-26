@@ -8,7 +8,7 @@
     },
     "citations": {
       "num_applicable_rows": 100,
-      "reviewed_citation_support_rate": 0.98
+      "reviewed_citation_support_rate": 0.97
     },
     "flagged_rows": [
       {
@@ -45,18 +45,32 @@
         "manual_hallucinated": true,
         "manual_notes": "Unsupported answer: the cited evidence requires a signed written Formal Complaint but does not establish a general rule that anonymous Formal Complaints cannot be filed.",
         "question_id": "unanswerable_015"
+      },
+      {
+        "manual_citation_supported": true,
+        "manual_correct": false,
+        "manual_hallucinated": true,
+        "manual_notes": "Unsupported answer: the corpus does not provide a blanket no answer to whether every PLOA can be extended for exactly two semesters; it only says colleges may set minimum and maximum durations.",
+        "question_id": "unanswerable_021"
+      },
+      {
+        "manual_citation_supported": false,
+        "manual_correct": false,
+        "manual_hallucinated": true,
+        "manual_notes": "Unsupported answer: the response uses interview/audio-recording evidence to answer a near-miss question about whether Student Code hearings are always video recorded.",
+        "question_id": "unanswerable_023"
       }
     ],
     "major_hallucination_rate": 0.02,
     "num_reviewed": 100,
-    "reviewed_correct_rate": 0.95,
-    "reviewed_hallucination_rate": 0.02,
+    "reviewed_correct_rate": 0.93,
+    "reviewed_hallucination_rate": 0.04,
     "system": "bm25_rag",
     "unanswerable": {
       "num_questions": 25,
-      "reviewed_correct_refusal_rate": 0.96,
-      "reviewed_false_answer_rate": 0.04,
-      "reviewed_hallucination_rate": 0.04
+      "reviewed_correct_refusal_rate": 0.88,
+      "reviewed_false_answer_rate": 0.12,
+      "reviewed_hallucination_rate": 0.12
     }
   },
   "bm25_rerank_rag": {
@@ -86,6 +100,13 @@
         "question_id": "title_iv_009"
       },
       {
+        "manual_citation_supported": true,
+        "manual_correct": false,
+        "manual_hallucinated": true,
+        "manual_notes": "Unsupported answer: the corpus does not provide a blanket no answer to whether every PLOA can be extended for exactly two semesters; it only says colleges may set minimum and maximum durations.",
+        "question_id": "unanswerable_021"
+      },
+      {
         "manual_citation_supported": false,
         "manual_correct": false,
         "manual_hallucinated": true,
@@ -95,14 +116,14 @@
     ],
     "major_hallucination_rate": 0.0,
     "num_reviewed": 100,
-    "reviewed_correct_rate": 0.97,
-    "reviewed_hallucination_rate": 0.01,
+    "reviewed_correct_rate": 0.96,
+    "reviewed_hallucination_rate": 0.02,
     "system": "bm25_rerank_rag",
     "unanswerable": {
       "num_questions": 25,
-      "reviewed_correct_refusal_rate": 0.96,
-      "reviewed_false_answer_rate": 0.04,
-      "reviewed_hallucination_rate": 0.04
+      "reviewed_correct_refusal_rate": 0.92,
+      "reviewed_false_answer_rate": 0.08,
+      "reviewed_hallucination_rate": 0.08
     }
   },
   "dense_rag": {
@@ -114,7 +135,7 @@
     },
     "citations": {
       "num_applicable_rows": 100,
-      "reviewed_citation_support_rate": 0.92
+      "reviewed_citation_support_rate": 0.91
     },
     "flagged_rows": [
       {
@@ -193,18 +214,32 @@
         "manual_hallucinated": false,
         "manual_notes": "Over-abstention/retrieval miss: Policy 7.3 gives the general-contact answer, but the retrieved evidence was from unrelated conduct documents.",
         "question_id": "title_iv_009"
+      },
+      {
+        "manual_citation_supported": true,
+        "manual_correct": false,
+        "manual_hallucinated": true,
+        "manual_notes": "Unsupported answer: the corpus does not provide a blanket no answer to whether every PLOA can be extended for exactly two semesters; it only says colleges may set minimum and maximum durations.",
+        "question_id": "unanswerable_021"
+      },
+      {
+        "manual_citation_supported": false,
+        "manual_correct": false,
+        "manual_hallucinated": true,
+        "manual_notes": "Unsupported answer: the response uses interview/audio-recording evidence to answer a near-miss question about whether Student Code hearings are always video recorded.",
+        "question_id": "unanswerable_023"
       }
     ],
     "major_hallucination_rate": 0.0,
     "num_reviewed": 100,
-    "reviewed_correct_rate": 0.91,
-    "reviewed_hallucination_rate": 0.0,
+    "reviewed_correct_rate": 0.89,
+    "reviewed_hallucination_rate": 0.02,
     "system": "dense_rag",
     "unanswerable": {
       "num_questions": 25,
-      "reviewed_correct_refusal_rate": 1.0,
-      "reviewed_false_answer_rate": 0.0,
-      "reviewed_hallucination_rate": 0.0
+      "reviewed_correct_refusal_rate": 0.92,
+      "reviewed_false_answer_rate": 0.08,
+      "reviewed_hallucination_rate": 0.08
     }
   },
   "dense_rerank_rag": {
@@ -258,20 +293,27 @@
         "manual_citation_supported": true,
         "manual_correct": false,
         "manual_hallucinated": true,
+        "manual_notes": "Unsupported answer: the corpus does not provide a blanket no answer to whether every PLOA can be extended for exactly two semesters; it only says colleges may set minimum and maximum durations.",
+        "question_id": "unanswerable_021"
+      },
+      {
+        "manual_citation_supported": true,
+        "manual_correct": false,
+        "manual_hallucinated": true,
         "manual_notes": "Unsupported answer: the fixed corpus does not establish a general no answer to whether Student Code hearings are always video recorded; audio-recording evidence does not rule out video recording.",
         "question_id": "unanswerable_023"
       }
     ],
     "major_hallucination_rate": 0.01,
     "num_reviewed": 100,
-    "reviewed_correct_rate": 0.94,
-    "reviewed_hallucination_rate": 0.02,
+    "reviewed_correct_rate": 0.93,
+    "reviewed_hallucination_rate": 0.03,
     "system": "dense_rerank_rag",
     "unanswerable": {
       "num_questions": 25,
-      "reviewed_correct_refusal_rate": 0.96,
-      "reviewed_false_answer_rate": 0.04,
-      "reviewed_hallucination_rate": 0.04
+      "reviewed_correct_refusal_rate": 0.92,
+      "reviewed_false_answer_rate": 0.08,
+      "reviewed_hallucination_rate": 0.08
     }
   },
   "iterkey_rag": {

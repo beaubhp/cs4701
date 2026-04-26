@@ -7,7 +7,7 @@
   },
   "citations": {
     "num_applicable_rows": 100,
-    "reviewed_citation_support_rate": 0.98
+    "reviewed_citation_support_rate": 0.97
   },
   "flagged_rows": [
     {
@@ -44,17 +44,31 @@
       "manual_hallucinated": true,
       "manual_notes": "Unsupported answer: the cited evidence requires a signed written Formal Complaint but does not establish a general rule that anonymous Formal Complaints cannot be filed.",
       "question_id": "unanswerable_015"
+    },
+    {
+      "manual_citation_supported": true,
+      "manual_correct": false,
+      "manual_hallucinated": true,
+      "manual_notes": "Unsupported answer: the corpus does not provide a blanket no answer to whether every PLOA can be extended for exactly two semesters; it only says colleges may set minimum and maximum durations.",
+      "question_id": "unanswerable_021"
+    },
+    {
+      "manual_citation_supported": false,
+      "manual_correct": false,
+      "manual_hallucinated": true,
+      "manual_notes": "Unsupported answer: the response uses interview/audio-recording evidence to answer a near-miss question about whether Student Code hearings are always video recorded.",
+      "question_id": "unanswerable_023"
     }
   ],
   "major_hallucination_rate": 0.02,
   "num_reviewed": 100,
-  "reviewed_correct_rate": 0.95,
-  "reviewed_hallucination_rate": 0.02,
+  "reviewed_correct_rate": 0.93,
+  "reviewed_hallucination_rate": 0.04,
   "system": "bm25_rag",
   "unanswerable": {
     "num_questions": 25,
-    "reviewed_correct_refusal_rate": 0.96,
-    "reviewed_false_answer_rate": 0.04,
-    "reviewed_hallucination_rate": 0.04
+    "reviewed_correct_refusal_rate": 0.88,
+    "reviewed_false_answer_rate": 0.12,
+    "reviewed_hallucination_rate": 0.12
   }
 }

@@ -25,6 +25,13 @@
       "question_id": "title_iv_009"
     },
     {
+      "manual_citation_supported": true,
+      "manual_correct": false,
+      "manual_hallucinated": true,
+      "manual_notes": "Unsupported answer: the corpus does not provide a blanket no answer to whether every PLOA can be extended for exactly two semesters; it only says colleges may set minimum and maximum durations.",
+      "question_id": "unanswerable_021"
+    },
+    {
       "manual_citation_supported": false,
       "manual_correct": false,
       "manual_hallucinated": true,
@@ -34,13 +41,13 @@
   ],
   "major_hallucination_rate": 0.0,
   "num_reviewed": 100,
-  "reviewed_correct_rate": 0.97,
-  "reviewed_hallucination_rate": 0.01,
+  "reviewed_correct_rate": 0.96,
+  "reviewed_hallucination_rate": 0.02,
   "system": "bm25_rerank_rag",
   "unanswerable": {
     "num_questions": 25,
-    "reviewed_correct_refusal_rate": 0.96,
-    "reviewed_false_answer_rate": 0.04,
-    "reviewed_hallucination_rate": 0.04
+    "reviewed_correct_refusal_rate": 0.92,
+    "reviewed_false_answer_rate": 0.08,
+    "reviewed_hallucination_rate": 0.08
   }
 }

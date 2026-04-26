@@ -49,19 +49,26 @@
       "manual_citation_supported": true,
       "manual_correct": false,
       "manual_hallucinated": true,
+      "manual_notes": "Unsupported answer: the corpus does not provide a blanket no answer to whether every PLOA can be extended for exactly two semesters; it only says colleges may set minimum and maximum durations.",
+      "question_id": "unanswerable_021"
+    },
+    {
+      "manual_citation_supported": true,
+      "manual_correct": false,
+      "manual_hallucinated": true,
       "manual_notes": "Unsupported answer: the fixed corpus does not establish a general no answer to whether Student Code hearings are always video recorded; audio-recording evidence does not rule out video recording.",
       "question_id": "unanswerable_023"
     }
   ],
   "major_hallucination_rate": 0.01,
   "num_reviewed": 100,
-  "reviewed_correct_rate": 0.94,
-  "reviewed_hallucination_rate": 0.02,
+  "reviewed_correct_rate": 0.93,
+  "reviewed_hallucination_rate": 0.03,
   "system": "dense_rerank_rag",
   "unanswerable": {
     "num_questions": 25,
-    "reviewed_correct_refusal_rate": 0.96,
-    "reviewed_false_answer_rate": 0.04,
-    "reviewed_hallucination_rate": 0.04
+    "reviewed_correct_refusal_rate": 0.92,
+    "reviewed_false_answer_rate": 0.08,
+    "reviewed_hallucination_rate": 0.08
   }
 }
