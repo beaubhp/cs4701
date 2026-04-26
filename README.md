@@ -229,6 +229,12 @@ data/results/generations_dense_rerank_rag_review_template.jsonl
 data/results/generations_iterkey_rag_review_template.jsonl
 ```
 
+After labels are filled:
+
+```bash
+python3 -m src.eval.reviewed_generation_eval
+```
+
 Per-system reviewed aggregates (rates, splits, and `flagged_rows`) are committed as:
 
 ```text

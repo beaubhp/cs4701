@@ -128,6 +128,8 @@ def review_row(generation: dict[str, Any], question: dict[str, Any], analyzed: d
         "manual_correct": None,
         "manual_citation_supported": None,
         "manual_hallucinated": None,
+        "review_abstention_correct": None,
+        "review_hallucination_severity": None,
         "manual_notes": "",
     }
 
